@@ -1,0 +1,234 @@
+The coursework involves designing and implementing a software system for the Hatfield Junior Swimming School (HJSS) 
+to manage bookings for swimming lessons. 
+
+The system must handle lesson scheduling, learner registrations, bookings, cancellations, and reviews. 
+
+It requires implementing a timetable for lessons, accommodating different grades and coaches, and must not rely on external databases or security protocols. 
+
+Deliverables include a class diagram, source code with JUnit tests, a video recording of the program's functions, 
+and a report discussing the design, assumptions, and implementation details.
+
+--
+
+Submission requirements specify a PDF document with the report and UML diagrams, a zipped project folder with source code, tests, and an executable jar file, 
+and a screen recording demonstrating the program. Marks will be awarded based on various criteria including the UML diagram, system functions, 
+use of version control, design and implementation quality, JUnit testing, and report writing quality.
+
+
+
+
+For the Hatfield Junior Swimming School (HJSS) system you're developing, the options menu should cater to the various functionalities required by the system 
+to manage swimming lesson bookings effectively. Here's a suggested list of options for the main menu based on the coursework requirements:
+
+1.	Lesson Scheduling
+•	Add a new swimming lesson
+•	Edit an existing swimming lesson
+•	Delete a swimming lesson
+•	View the timetable of lessons
+
+2.	Learner Registration
+•	Register a new learner
+•	Edit learner details
+•	Delete a learner
+•	List all registered learners
+
+3.	Bookings Management
+•	Create a new booking for a lesson
+•	Edit an existing booking
+•	Cancel a booking
+•	View all bookings for a lesson
+
+4.	Coach Management
+•	Add a new coach
+•	Edit coach details
+•	Delete a coach
+•	Assign a coach to a lesson
+
+5.	Lesson Grades Management
+•	Add a new grade
+•	Edit a grade
+•	Delete a grade
+•	List all grades
+
+6.	Reviews and Feedback
+•	Submit a review for a lesson
+•	View reviews for a lesson
+
+7.	Reports and Analytics
+•	Generate report of lessons (by grade, coach, or time)
+•	Analyze booking trends
+•	Learner progress report
+
+8.	System Settings and Help
+•	User guide
+•	About the system
+•	System settings (if applicable)
+
+9.	Exit
+•	Exit the application
+
+
+This menu structure is designed to cover all functionalities needed for comprehensive management of swimming lessons, including scheduling, registrations, bookings, and handling cancellations. It also accommodates administrative tasks like managing coach assignments and lesson grades, as well as providing a channel for feedback through reviews. Adjustments can be made based on specific requirements or additional functionalities not mentioned in the brief.
+
+
+#########################
+
+!!!!4 weeks of timetables!!!!
+
+
+program ask for learner info
+
+option to view time table
+	view by day 
+		For example, a learner has chosen Saturday, then all the lessons on all Saturdays in the timetable will be displayed
+	view by grade
+		For example, a learner has chosen Grade 1, then all the Grade 1 lessons on all the days in the timetable will be displayed.
+	view by coach's name
+		For example, a learner has chosen Helen (assuming Helen is a coach in HJSS), then all the lessons taught by Helen in the timetable will be displayed.
+
+learner selects a timeslot to book
+	lesson has to be at the grade or above (grade or grade++)
+	
+
+
+change a booking
+cancel a booking
+
+no max num of bookings
+but no duplicate bookings
+
+----
+
+attend next lesson button
+	after... 
+		if lesson is grade++
+			increase grade
+		
+		all previous lessons are completed
+		 set time to after lesson
+		launch review process
+	
+	
+review process
+	review from 1 to 5 (1: Very dissatisfied, 2: Dissatisfied, 3: Ok, 4: Satisfied, 5: Very Satisfied
+
+
+
+
+At the end, 4 weeks later / 44 lessons
+
+print info for each learner
+
+• a report containing the detailed information of each learner, i.e., the lessons s/he has booked, cancelled, 
+	and attended. You need to list these lessons and the number of each category (booked, cancelled, attended).
+• a report containing the information of each coach, i.e., their names, and their respective average ratings
+	received.
+
+
+
+time table vacancy will be filled like so...
+	1,2,3,4,3,2,1,1,2,3,4,3,2,1,1,2,3,4,3,2,1,1,2,3,4,3,2,1,
+
+
+In your final deliverable, you need to design at least 4 weeks of timetable (44 lessons) by yourself and cover all
+the grades and all the coaches. 
+
+The timetable can either be repeated every week or be different every week,
+depending on your design. 
+
+All the coaches and some learners may be assumed to be pre-registered, but you should
+provide a function to add new learner to the system. You can have around 15 learners and 3-4 coaches.
+
+
+Note: you do not need any kind of external database for this program. The final program should be self-contained.
+The reports can be printed to System.out, or output to a suitable GUI interface. You also do not need any kind of
+security protocol.
+
+
+#########################
+
+
+Lessons for Grades 1, 2, 3, 4, 5
+
+lessons last 1hr
+lessons have 4 people
+
+lessons on...
+	Monday, Wednesday, and Friday, 
+		3 time slots (4-5pm, 5-6pm, 6-7pm) 
+	Saturday,
+		2 time slots (2-3pm, 3-4pm). 
+
+Coaches can teach every grade
+
+learner = new Learner(name, gender, age, emergency contact, phone number, current grade level)
+	
+	age has to be between 4 and 11
+	
+	Grades 0, 1, 2, 3, 4, 5
+
+
+
+'name': None,
+'gender': None,
+'age': None,
+'contact': None,
+'phone_number': None,
+'grade': None
+
+
+
+
+
+############################
+REPORT NOTES
+
+
+class main
+	
+	method main
+		main method
+	
+	method user input
+		get valid user inputs for new learner
+	
+	method init
+		has all the preset init
+		
+		
+		
+		
+class filters
+
+class validators
+
+class Lesson
+
+class Learner
+
+class Coach
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////
+
+talk about encapsulation and how I changed it to have multiple logic
+
+
+
+
+Moving the validation logic into the Learner class can make the class responsible not only for 
+holding learner data but also for ensuring that the data conforms to certain validation criteria. 
+
+This approach is a step towards encapsulating both data and behavior related to the learner within the same class.
+
+Below is the revised version of the Learner class with the validation logic included, and adjustments to the LearnerApp class to reflect these changes.
+
+
