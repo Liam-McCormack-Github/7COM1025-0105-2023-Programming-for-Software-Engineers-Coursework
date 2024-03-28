@@ -5,7 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="More Project Init">
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/HatfieldJuniorSwimmingSchool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/MenuOptionsValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/UserInputValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateAge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateContact.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateGender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateGrade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidatePhoneNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/menu/ValidateMainMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/others/ValidateDay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/Coach.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Coach.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/Day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Day.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/Grade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Grade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/Learner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Learner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/Lesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Lesson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/Timeslot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Timeslot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Globals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/HatfieldJuniorSwimmingSchool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/HatfieldJuniorSwimmingSchool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Seeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Seeder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,11 +48,13 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2eKHIbnk1pj5ZowHR6pVUMI4rSV" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -41,19 +64,33 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "Features",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/liam/Desktop/Uni Stuff/MSc 23-24/Assignments/7COM1025-0105-2023---Programming-for-Software-Engineers/HatfieldJuniorSwimmingSchool/src/main/java/utils/input",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\liam\Desktop\Uni Stuff\MSc 23-24\Assignments\7COM1025-0105-2023---Programming-for-Software-Engineers\HatfieldJuniorSwimmingSchool\src\main\java\utils\input" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\liam\Desktop\Uni Stuff\MSc 23-24\Assignments\7COM1025-0105-2023---Programming-for-Software-Engineers\HatfieldJuniorSwimmingSchool\src\main\java" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="utils" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="utils.validators.menu" />
     </key>
   </component>
   <component name="RunManager">

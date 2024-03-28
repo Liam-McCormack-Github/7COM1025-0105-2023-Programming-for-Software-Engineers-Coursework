@@ -21,6 +21,23 @@ public class Globals {
     public static final int minRating = 1;
     public static final int maxRating = 5;
 
+    // String names
+    public static final String createLearner = "Create a new learner";
+    public static final String selectLearner = "Select a learner";
+    public static final String selectLesson = "Select a lesson";
+    public static final String bookSelectedLesson = "Create a new booking for the selected learner at the selected lesson";
+    public static final String cancelNextLesson = "Cancel the booking for the selected learner at the selected lesson";
+    public static final String simulateUntilNextLesson = "Simulate lessons (Until: next user lesson || end)";
+    public static final String menuNameMainMenu = "Main Menu";
+    public static final String menuNameSelectLearner = "Select Learner";
+    public static final String menuNameSelectLessonByDay = "Select lesson by Day";
+    public static final String menuNameSelectLessonByGrade = "Select lesson by Grade";
+    public static final String menuNameSelectLessonByCoach = "Select lesson by Coach";
+    public static final String menuNameSelectLessonByLearner = "Select lesson by Learner";
+    public static final String menuNameSelectLessonByLessonNumber = "Select lesson by Lesson Number";
+    public static final String menuNameSelectLesson = "Select Lesson";
+
+
     // https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";

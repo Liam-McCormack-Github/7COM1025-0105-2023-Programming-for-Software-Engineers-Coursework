@@ -1,11 +1,14 @@
 package core;
 
 import common.*;
+import utils.MenuOptionsValidator;
+import utils.UserInputValidator;
+import utils.Utils;
+import utils.validators.input.*;
+import utils.validators.menu.ValidateMainMenu;
 
 import java.util.ArrayList;
-import java.util.NavigableSet;
 import java.util.Scanner;
-import java.util.TreeSet;
 
 public class HatfieldJuniorSwimmingSchool {
     private final ArrayList<Day> days;
@@ -42,6 +45,7 @@ public class HatfieldJuniorSwimmingSchool {
         this.selectedLessons = new ArrayList<>();
         this.selectedLesson = null;
     }
+
     /*
      *   __  __ ______ _______ _    _  ____  _____   _____
      *  |  \/  |  ____|__   __| |  | |/ __ \|  __ \ / ____|
@@ -74,14 +78,105 @@ public class HatfieldJuniorSwimmingSchool {
     }
 
     public void preInit() {
+        this.seedDays();
+        this.seedGrades();
+
         this.scanner = new Scanner(System.in);
     }
 
+    private void seedDays() {
+        for (int i = 1; i <= Globals.daysOfTheWeek.length; i++) {
+            new Day(this, i);
+        }
+    }
+
+    private void seedGrades() {
+        for (int i = Globals.minGrade; i <= Globals.maxGrade; i++) {
+            new Grade(this, i);
+        }
+    }
+
     public void init() {
+        Seeder.seedTimeslots(this);
+        Seeder.seedCoaches(this);
+        Seeder.seedLearners(this);
+        Seeder.seedLessons(this);
+        Seeder.seedBookings(this);
+
+        this.getLessonsForEachDay();
+    }
+
+    public void getLessonsForEachDay() {
+        for (Day day : this.days) {
+            day.getLessonsOfTheDay();
+        }
     }
 
     public void run() {
+        mainMenu();
+        // TODO
+    }
 
+
+    private void mainMenu() {
+
+        int selectedOptionFromMainMenu = MenuOptionsValidator.userInputMenu(Globals.menuNameMainMenu, ValidateMainMenu::menuOptions, ValidateMainMenu::menuResults, this);
+
+        switch (selectedOptionFromMainMenu) {
+            case 1:
+                createLearner();
+                System.out.println(this.selectedLearner);
+                break;
+                /*
+            case 2:
+                selectLearner();
+                break;
+            case 3:
+                selectLesson();
+                break;
+            case 4:
+                createBooking();
+                break;
+            case 5:
+                cancelBooking();
+                break;
+            case 6:
+                simulateLessons();
+                break;
+                test case
+                */
+            case 888:
+                Learner debugging = new Learner(this, "human1", "other", 11, "human1@mail.com", "1234567898", this.getGradeByNumber(1));
+                this.setSelectedLearner(debugging);
+                break;
+            default:
+                break;
+        }
+
+        if (selectedOptionFromMainMenu == Globals.exitCode) {
+            Utils.printOutputMessage("Application is terminating");
+            // System.exit(0);
+        } else {
+            mainMenu();
+        }
+    }
+
+    private void createLearner() {
+        Learner learner = userInputNewLearner();
+        Utils.printOutputMessage(String.format("Created new learner (%s)", learner.getInfo()));
+        this.setSelectedLearner(learner);
+        Utils.printOutputMessage(String.format("Selected learner (%s)", learner.getInfo()));
+    }
+
+    private Learner userInputNewLearner() {
+        String name = UserInputValidator.validateInput("Enter learner's name: ", ValidateName::validate, this);
+        String gender = UserInputValidator.validateInput("Enter learner's gender: ", ValidateGender::validate, this);
+        int age = UserInputValidator.validateInput("Enter learner's age: ", ValidateAge::validate, this);
+        String contact = UserInputValidator.validateInput("Enter emergency contact name: ", ValidateContact::validate, this);
+        String number = UserInputValidator.validateInput("Enter phone number: ", ValidatePhoneNumber::validate, this);
+        int grade = UserInputValidator.validateInput("Enter current grade level: ", ValidateGrade::validate, this);
+
+        return new Learner(this, name, gender, age, contact, number, this.getGradeByNumber(grade));
     }
 
     /*
@@ -138,16 +233,44 @@ public class HatfieldJuniorSwimmingSchool {
         return this.numberOfLessons;
     }
 
+    /*
+     *   _____ ______ _______ _______ ______ _____   _____
+     *  / ____|  ____|__   __|__   __|  ____|  __ \ / ____|
+     * | (___ | |__     | |     | |  | |__  | |__) | (___
+     *  \___ \|  __|    | |     | |  |  __| |  _  / \___ \
+     *  ____) | |____   | |     | |  | |____| | \ \ ____) |
+     * |_____/|______|  |_|     |_|  |______|_|  \_\_____/
+     *
+     * Setters
+     */
+    public void setNumberOfLessons(int numberOfLessons) {
+        this.numberOfLessons = numberOfLessons;
+    }
 
     public Learner getSelectedLearner() {
         return this.selectedLearner;
     }
+
+    public void setSelectedLearner(Learner selectedLearner) {
+        this.selectedLearner = selectedLearner;
+    }
+
     public Lesson getSelectedLesson() {
         return this.selectedLesson;
     }
+
+    public void setSelectedLesson(Lesson selectedLesson) {
+        this.selectedLesson = selectedLesson;
+    }
+
     public ArrayList<Lesson> getSelectedLessons() {
         return this.selectedLessons;
     }
+
+    public void setSelectedLessons(ArrayList<Lesson> selectedLessons) {
+        this.selectedLessons = selectedLessons;
+    }
+
     // Helpers
     public Learner getLearnerByNumber(int learnerNumber) {
         return this.learners.get(learnerNumber - 1);
@@ -162,35 +285,10 @@ public class HatfieldJuniorSwimmingSchool {
     }
 
     public Grade getGradeByNumber(int gradeNumber) {
-        return this.grades.get(gradeNumber + 1);
+        return this.grades.get(gradeNumber);
     }
 
     public Day getDayByNumber(int dayNumber) {
         return this.days.get(dayNumber - 1);
-    }
-
-
-
-    /*
-     *   _____ ______ _______ _______ ______ _____   _____
-     *  / ____|  ____|__   __|__   __|  ____|  __ \ / ____|
-     * | (___ | |__     | |     | |  | |__  | |__) | (___
-     *  \___ \|  __|    | |     | |  |  __| |  _  / \___ \
-     *  ____) | |____   | |     | |  | |____| | \ \ ____) |
-     * |_____/|______|  |_|     |_|  |______|_|  \_\_____/
-     *
-     * Setters
-     */
-    public void setNumberOfLessons(int numberOfLessons) {
-        this.numberOfLessons = numberOfLessons;
-    }
-    public void setSelectedLearner(Learner selectedLearner) {
-        this.selectedLearner = selectedLearner;
-    }
-    public void setSelectedLesson(Lesson selectedLesson) {
-        this.selectedLesson = selectedLesson;
-    }
-    public void setSelectedLessons(ArrayList<Lesson> selectedLessons) {
-        this.selectedLessons = selectedLessons;
     }
 }
