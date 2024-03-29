@@ -24,11 +24,23 @@ public class ValidateMainMenu {
             return new Utils.ValidationResult<>(true, userChoice, "Returning To Main Menu");
         }
 
-        if (userChoice == 1) {
+        if (userChoice == 1 ||
+                // userChoice == 888 ||
+                userChoice == 2 ||
+                userChoice == 3
+        ) {
             return new Utils.ValidationResult<>(true, userChoice, null);
         }
 
         String errorMessage = String.format("Invalid Selection: '%s' is not a valid option", userChoice);
+
+        if (userChoice == 4) {
+            if (HJSS.getSelectedLearner() != null && HJSS.getSelectedLesson() != null) {
+                return new Utils.ValidationResult<>(true, userChoice, null);
+            } else {
+                errorMessage = "You need to select a user and a lesson before booking";
+            }
+        }
 
         return new Utils.ValidationResult<>(false, null, errorMessage);
     }

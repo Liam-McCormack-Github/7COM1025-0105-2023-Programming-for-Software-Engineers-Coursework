@@ -38,7 +38,9 @@ public class Lesson {
         this.day = this.timeslot.getDay();
         this.finished = false;
 
-        // TODO add to timeslots, coach, grade
+        this.timeslot.getLessons().add(this);
+        coach.getLessons().add(this);
+        grade.getLessons().add(this);
 
         HJSS.getLessons().add(this);
     }
