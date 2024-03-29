@@ -1,9 +1,6 @@
 package core;
 
-import common.Coach;
-import common.Learner;
-import common.Lesson;
-import common.Timeslot;
+import common.*;
 
 public class Seeder {
     // Populate ArrayList Timeslots
@@ -114,6 +111,93 @@ public class Seeder {
 
     // Populate ArrayList Bookings
     public static void seedBookings(HatfieldJuniorSwimmingSchool HJSS) {
-        // new Booking(HJSS, HJSS.getLessonByNumber(1), HJSS.getLearnerByNumber(1));
+        // Week 1
+        new Booking(HJSS, HJSS.getLessonByNumber(1), HJSS.getLearnerByNumber(1));
+        new Booking(HJSS, HJSS.getLessonByNumber(1), HJSS.getLearnerByNumber(2));
+        new Booking(HJSS, HJSS.getLessonByNumber(1), HJSS.getLearnerByNumber(3));
+        new Booking(HJSS, HJSS.getLessonByNumber(2), HJSS.getLearnerByNumber(4));
+        new Booking(HJSS, HJSS.getLessonByNumber(2), HJSS.getLearnerByNumber(5));
+        new Booking(HJSS, HJSS.getLessonByNumber(3), HJSS.getLearnerByNumber(1));
+        new Booking(HJSS, HJSS.getLessonByNumber(3), HJSS.getLearnerByNumber(2));
+        new Booking(HJSS, HJSS.getLessonByNumber(3), HJSS.getLearnerByNumber(3));
+        new Booking(HJSS, HJSS.getLessonByNumber(3), HJSS.getLearnerByNumber(4));
+        new Booking(HJSS, HJSS.getLessonByNumber(3), HJSS.getLearnerByNumber(5));
+
+        new Booking(HJSS, HJSS.getLessonByNumber(4), HJSS.getLearnerByNumber(6));
+        new Booking(HJSS, HJSS.getLessonByNumber(4), HJSS.getLearnerByNumber(7));
+        new Booking(HJSS, HJSS.getLessonByNumber(5), HJSS.getLearnerByNumber(8));
+        new Booking(HJSS, HJSS.getLessonByNumber(5), HJSS.getLearnerByNumber(9));
+        new Booking(HJSS, HJSS.getLessonByNumber(6), HJSS.getLearnerByNumber(10));
+        new Booking(HJSS, HJSS.getLessonByNumber(7), HJSS.getLearnerByNumber(11));
+        new Booking(HJSS, HJSS.getLessonByNumber(8), HJSS.getLearnerByNumber(12));
+        new Booking(HJSS, HJSS.getLessonByNumber(9), HJSS.getLearnerByNumber(13));
+        new Booking(HJSS, HJSS.getLessonByNumber(10), HJSS.getLearnerByNumber(14));
+        new Booking(HJSS, HJSS.getLessonByNumber(11), HJSS.getLearnerByNumber(15));
+        // Week 2
+        new Booking(HJSS, HJSS.getLessonByNumber(12), HJSS.getLearnerByNumber(1));
+        new Booking(HJSS, HJSS.getLessonByNumber(12), HJSS.getLearnerByNumber(2));
+        new Booking(HJSS, HJSS.getLessonByNumber(12), HJSS.getLearnerByNumber(3));
+        new Booking(HJSS, HJSS.getLessonByNumber(13), HJSS.getLearnerByNumber(4));
+        new Booking(HJSS, HJSS.getLessonByNumber(13), HJSS.getLearnerByNumber(5));
+        new Booking(HJSS, HJSS.getLessonByNumber(14), HJSS.getLearnerByNumber(1));
+        new Booking(HJSS, HJSS.getLessonByNumber(14), HJSS.getLearnerByNumber(2));
+        new Booking(HJSS, HJSS.getLessonByNumber(14), HJSS.getLearnerByNumber(3));
+        new Booking(HJSS, HJSS.getLessonByNumber(14), HJSS.getLearnerByNumber(4));
+        new Booking(HJSS, HJSS.getLessonByNumber(14), HJSS.getLearnerByNumber(5));
+
+        new Booking(HJSS, HJSS.getLessonByNumber(15), HJSS.getLearnerByNumber(6));
+        new Booking(HJSS, HJSS.getLessonByNumber(15), HJSS.getLearnerByNumber(7));
+        new Booking(HJSS, HJSS.getLessonByNumber(16), HJSS.getLearnerByNumber(8));
+        new Booking(HJSS, HJSS.getLessonByNumber(16), HJSS.getLearnerByNumber(9));
+        new Booking(HJSS, HJSS.getLessonByNumber(17), HJSS.getLearnerByNumber(10));
+        new Booking(HJSS, HJSS.getLessonByNumber(18), HJSS.getLearnerByNumber(11));
+        new Booking(HJSS, HJSS.getLessonByNumber(19), HJSS.getLearnerByNumber(12));
+        new Booking(HJSS, HJSS.getLessonByNumber(20), HJSS.getLearnerByNumber(13));
+        new Booking(HJSS, HJSS.getLessonByNumber(21), HJSS.getLearnerByNumber(14));
+        new Booking(HJSS, HJSS.getLessonByNumber(22), HJSS.getLearnerByNumber(15));
+        // Week 3
+        new Booking(HJSS, HJSS.getLessonByNumber(23), HJSS.getLearnerByNumber(1));
+        new Booking(HJSS, HJSS.getLessonByNumber(23), HJSS.getLearnerByNumber(2));
+        new Booking(HJSS, HJSS.getLessonByNumber(23), HJSS.getLearnerByNumber(3));
+        new Booking(HJSS, HJSS.getLessonByNumber(24), HJSS.getLearnerByNumber(4));
+        new Booking(HJSS, HJSS.getLessonByNumber(24), HJSS.getLearnerByNumber(5));
+        new Booking(HJSS, HJSS.getLessonByNumber(25), HJSS.getLearnerByNumber(1));
+        new Booking(HJSS, HJSS.getLessonByNumber(25), HJSS.getLearnerByNumber(2));
+        new Booking(HJSS, HJSS.getLessonByNumber(25), HJSS.getLearnerByNumber(3));
+        new Booking(HJSS, HJSS.getLessonByNumber(25), HJSS.getLearnerByNumber(4));
+        new Booking(HJSS, HJSS.getLessonByNumber(25), HJSS.getLearnerByNumber(5));
+
+        new Booking(HJSS, HJSS.getLessonByNumber(26), HJSS.getLearnerByNumber(6));
+        new Booking(HJSS, HJSS.getLessonByNumber(26), HJSS.getLearnerByNumber(7));
+        new Booking(HJSS, HJSS.getLessonByNumber(27), HJSS.getLearnerByNumber(8));
+        new Booking(HJSS, HJSS.getLessonByNumber(27), HJSS.getLearnerByNumber(9));
+        new Booking(HJSS, HJSS.getLessonByNumber(28), HJSS.getLearnerByNumber(10));
+        new Booking(HJSS, HJSS.getLessonByNumber(29), HJSS.getLearnerByNumber(11));
+        new Booking(HJSS, HJSS.getLessonByNumber(30), HJSS.getLearnerByNumber(12));
+        new Booking(HJSS, HJSS.getLessonByNumber(31), HJSS.getLearnerByNumber(13));
+        new Booking(HJSS, HJSS.getLessonByNumber(32), HJSS.getLearnerByNumber(14));
+        new Booking(HJSS, HJSS.getLessonByNumber(33), HJSS.getLearnerByNumber(15));
+        // Week 4
+        new Booking(HJSS, HJSS.getLessonByNumber(34), HJSS.getLearnerByNumber(1));
+        new Booking(HJSS, HJSS.getLessonByNumber(34), HJSS.getLearnerByNumber(2));
+        new Booking(HJSS, HJSS.getLessonByNumber(34), HJSS.getLearnerByNumber(3));
+        new Booking(HJSS, HJSS.getLessonByNumber(35), HJSS.getLearnerByNumber(4));
+        new Booking(HJSS, HJSS.getLessonByNumber(35), HJSS.getLearnerByNumber(5));
+        new Booking(HJSS, HJSS.getLessonByNumber(36), HJSS.getLearnerByNumber(1));
+        new Booking(HJSS, HJSS.getLessonByNumber(36), HJSS.getLearnerByNumber(2));
+        new Booking(HJSS, HJSS.getLessonByNumber(36), HJSS.getLearnerByNumber(3));
+        new Booking(HJSS, HJSS.getLessonByNumber(36), HJSS.getLearnerByNumber(4));
+        new Booking(HJSS, HJSS.getLessonByNumber(36), HJSS.getLearnerByNumber(5));
+
+        new Booking(HJSS, HJSS.getLessonByNumber(37), HJSS.getLearnerByNumber(6));
+        new Booking(HJSS, HJSS.getLessonByNumber(37), HJSS.getLearnerByNumber(7));
+        new Booking(HJSS, HJSS.getLessonByNumber(38), HJSS.getLearnerByNumber(8));
+        new Booking(HJSS, HJSS.getLessonByNumber(38), HJSS.getLearnerByNumber(9));
+        new Booking(HJSS, HJSS.getLessonByNumber(39), HJSS.getLearnerByNumber(10));
+        new Booking(HJSS, HJSS.getLessonByNumber(40), HJSS.getLearnerByNumber(11));
+        new Booking(HJSS, HJSS.getLessonByNumber(41), HJSS.getLearnerByNumber(12));
+        new Booking(HJSS, HJSS.getLessonByNumber(42), HJSS.getLearnerByNumber(13));
+        new Booking(HJSS, HJSS.getLessonByNumber(43), HJSS.getLearnerByNumber(14));
+        new Booking(HJSS, HJSS.getLessonByNumber(44), HJSS.getLearnerByNumber(15));
     }
 }

@@ -6,9 +6,12 @@ import utils.UserInputValidator;
 import utils.Utils;
 import utils.validators.input.*;
 import utils.validators.menu.*;
+import utils.validators.others.ValidateCancellation;
 
 import java.util.ArrayList;
+import java.util.NavigableSet;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 public class HatfieldJuniorSwimmingSchool {
     private final ArrayList<Day> days;
@@ -18,7 +21,7 @@ public class HatfieldJuniorSwimmingSchool {
     private final ArrayList<Lesson> lessons;
     private final ArrayList<Review> reviews;
     private final ArrayList<Booking> bookings;
-    private final ArrayList<Grade> grades;
+    private final NavigableSet<Grade> grades;
 
     private int numberOfLessons;
     private int currentLessonNumber;
@@ -39,7 +42,8 @@ public class HatfieldJuniorSwimmingSchool {
         this.lessons = new ArrayList<>();
         this.reviews = new ArrayList<>();
         this.bookings = new ArrayList<>();
-        this.grades = new ArrayList<>();
+
+        this.grades = new TreeSet<>();
 
         this.selectedLearner = null;
         this.selectedLessons = new ArrayList<>();
@@ -78,6 +82,7 @@ public class HatfieldJuniorSwimmingSchool {
     }
 
     public void preInit() {
+        Globals.resetStaticTrees();
         this.seedDays();
         this.seedGrades();
 
@@ -94,6 +99,9 @@ public class HatfieldJuniorSwimmingSchool {
         for (int i = Globals.minGrade; i <= Globals.maxGrade; i++) {
             new Grade(this, i);
         }
+        Globals.generateGlobalGradePositionMap(this.grades);
+        Globals.generateGlobalGradeTreeSet(this.grades);
+        Globals.generateGlobalGradeLevelMap(this.grades);
     }
 
     public void init() {
@@ -125,7 +133,6 @@ public class HatfieldJuniorSwimmingSchool {
         switch (selectedOptionFromMainMenu) {
             case 1:
                 createLearner();
-                System.out.println(this.selectedLearner);
                 break;
             case 2:
                 selectLearner();
@@ -136,18 +143,19 @@ public class HatfieldJuniorSwimmingSchool {
             case 4:
                 createBooking();
                 break;
-                /*
             case 5:
                 cancelBooking();
                 break;
+                /*
             case 6:
                 simulateLessons();
                 break;
                 test case
                 */
-            case 888:
+            case 888:  // TODO remove
                 Learner debugging = new Learner(this, "human1", "other", 11, "human1@mail.com", "1234567898", this.getGradeByNumber(1));
                 this.setSelectedLearner(debugging);
+                this.setSelectedLesson(this.getLessonByNumber(12));
                 break;
             default:
                 break;
@@ -256,6 +264,36 @@ public class HatfieldJuniorSwimmingSchool {
         }
     }
 
+    private void cancelBooking() {
+        ArrayList<Booking> bookedLessons = this.selectedLearner.getBookings();
+        try {
+            if (this.selectedLesson.isFinished()) {
+                UserInputValidator.ValidationResult<Lesson> result = ValidateCancellation.validate(this.selectedLesson);
+                if (!result.isValid()) {
+                    throw new IllegalArgumentException(result.getErrorMessage());
+                }
+
+            }
+
+            boolean lessonToCancel = false;
+            for (Booking bookedLesson : bookedLessons) {
+                if (bookedLesson.getLesson().getId() == this.selectedLesson.getId()) {
+                    bookedLesson.Cancel();
+                    lessonToCancel = true;
+                }
+            }
+
+            if (!lessonToCancel) {
+                throw new IllegalArgumentException("Lesson has no booking to cancel");
+            }
+
+            Utils.printOutputMessage(String.format("Cancelled booking for (%s)", this.selectedLesson.getLessonTitle()));
+        } catch (IllegalArgumentException e) {
+            Utils.printErrorMessage(e.getLocalizedMessage());
+            Utils.printErrorMessage("Could not cancel learner from lesson, please choose a different lesson");
+        }
+    }
+
     /*
      *   _____ ______ _______ _______ ______ _____   _____
      *  / ____|  ____|__   __|__   __|  ____|  __ \ / ____|
@@ -298,7 +336,7 @@ public class HatfieldJuniorSwimmingSchool {
         return this.bookings;
     }
 
-    public ArrayList<Grade> getGrades() {
+    public NavigableSet<Grade> getGrades() {
         return this.grades;
     }
 
@@ -362,7 +400,7 @@ public class HatfieldJuniorSwimmingSchool {
     }
 
     public Grade getGradeByNumber(int gradeNumber) {
-        return this.grades.get(gradeNumber);
+        return Globals.gradeMap.get(gradeNumber + 1);
     }
 
     public Day getDayByNumber(int dayNumber) {

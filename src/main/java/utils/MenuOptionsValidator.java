@@ -1,6 +1,7 @@
 package utils;
 
 
+import common.Booking;
 import common.Learner;
 import common.Lesson;
 import core.Globals;
@@ -23,7 +24,7 @@ public class MenuOptionsValidator extends Utils {
         System.out.print("\t\t\t(Selected Learner : ");
         // Get Selected Learner
         if (user != null) {
-            System.out.printf("%s%s%s)", Globals.ANSI_GREEN, user.getInfo(), Globals.ANSI_RESET);
+            System.out.printf("%s[%s]%s)", Globals.ANSI_GREEN, user.getInfo(), Globals.ANSI_RESET);
         } else {
             System.out.printf("%sNone%s)", Globals.ANSI_RED, Globals.ANSI_RESET);
         }
@@ -41,8 +42,21 @@ public class MenuOptionsValidator extends Utils {
         } else {
             System.out.printf("%sNot Yet Started%s)", Globals.ANSI_RED, Globals.ANSI_RESET);
         }
+        // Get Booked Lessons
+        System.out.print("\t(Booked Lessons : ");
+        if (user != null) {
+            ArrayList<String> outputBookedLessons = new ArrayList<>();
+            for (Booking booking : user.getBookings()) {
+                if (!booking.isCancelled()) {
+                    outputBookedLessons.add(String.format("%s%d%s", Globals.ANSI_GREEN, booking.getLesson().getLessonNumber(), Globals.ANSI_RESET));
+                }
+            }
+            System.out.print(outputBookedLessons);
+        } else {
+            System.out.printf("%sNone%s", Globals.ANSI_RED, Globals.ANSI_RESET);
+        }
 
-        System.out.printf("%n");
+        System.out.printf(")%n");
         Utils.printSeparator(Globals.ANSI_RED);
         for (int i = 0; i < menuOptions.size(); i++) {
             System.out.printf("%s%3d%s: %s%n", Globals.ANSI_CYAN, (i + 1), Globals.ANSI_RESET, menuOptions.get(i));

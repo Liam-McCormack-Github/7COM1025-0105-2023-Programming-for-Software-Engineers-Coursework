@@ -15,7 +15,8 @@ public class ValidateLessonByGrade {
 
 
         if (!HJSS.getGrades().isEmpty()) {
-            for (Grade grade : HJSS.getGrades()) {
+            Grade firstGrade = HJSS.getGrades().first();
+            for (Grade grade : HJSS.getGrades().tailSet(firstGrade, false)) {
 
                 String colorCode = grade.getLessons().isEmpty() ? Globals.ANSI_RED : Globals.ANSI_GREEN;
                 String gradeDetails = String.format("%sGrade %s%s", colorCode, grade.getLevel(), Globals.ANSI_RESET);
