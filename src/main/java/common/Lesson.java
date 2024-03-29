@@ -54,6 +54,16 @@ public class Lesson {
      * Methods
      */
 
+    // Lesson details without learners
+    public String getLessonTitle() {
+        return String.format("Lesson: #%d\t(w%d\tl%d) \tGrade: %d \tCoach: %s \tTime: %s (%s->%s)", this.lessonNumber, this.week, this.lessonNumberWeek, this.getGradeLevel(), this.getCoach().getName(), this.day.getName(), this.getTimeslot().getStartTime(), this.getTimeslot().getEndTime());
+    }
+
+    // Full Lesson details with learners
+    public String getLessonDetails() {
+        return String.format("Lesson: #%d\t(w%d l%d) \tGrade: %d \tCoach: %s \tTime: %s (%s->%s) \tLearners: [%s]", this.lessonNumber, this.week, this.lessonNumberWeek, this.getGradeLevel(), this.getCoach().getName(), this.day.getName(), this.getTimeslot().getStartTime(), this.getTimeslot().getEndTime(), this.getLearnerNames());
+    }
+
     // Method to get the names of all learners in the classroom as a single String
     public String getLearnerNames() {
         return learners.stream().map(Learner::getInfo).collect(Collectors.joining(", ")); // Map each Learner to their name. Join names with a comma and a space

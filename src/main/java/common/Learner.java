@@ -13,12 +13,12 @@ public class Learner {
     private final ArrayList<Lesson> lessons;
     private final ArrayList<Lesson> lessonsHigherGradeAchieved;
     private final ArrayList<Review> lessonsReviewed;
+    private final Grade grade;
     private String name;
     private String gender;
     private int age;
     private String contact;
     private String number;
-    private final Grade grade;
 
 
     // Constructor

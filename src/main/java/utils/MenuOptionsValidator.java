@@ -1,6 +1,8 @@
 package utils;
 
 
+import common.Learner;
+import common.Lesson;
 import core.Globals;
 import core.HatfieldJuniorSwimmingSchool;
 
@@ -13,8 +15,34 @@ public class MenuOptionsValidator extends Utils {
 
     public static void printMenuOptions(String menuName, Function<HatfieldJuniorSwimmingSchool, ArrayList<String>> menuOptionsFunction, HatfieldJuniorSwimmingSchool HJSS) {
         ArrayList<String> menuOptions = menuOptionsFunction.apply(HJSS);
+        Learner user = HJSS.getSelectedLearner();
+        Lesson selectedLesson = HJSS.getSelectedLesson();
+
         Utils.printSeparator(Globals.ANSI_RED);
-        System.out.println(menuName);
+        System.out.print(menuName);
+        System.out.print("\t\t\t(Selected Learner : ");
+        // Get Selected Learner
+        if (user != null) {
+            System.out.printf("%s%s%s)", Globals.ANSI_GREEN, user.getInfo(), Globals.ANSI_RESET);
+        } else {
+            System.out.printf("%sNone%s)", Globals.ANSI_RED, Globals.ANSI_RESET);
+        }
+        // Get Selected Lesson
+        System.out.print("\t(Selected Lesson : ");
+        if (selectedLesson != null) {
+            System.out.printf("%s%s%s)", Globals.ANSI_GREEN, selectedLesson.getLessonNumber(), Globals.ANSI_RESET);
+        } else {
+            System.out.printf("%sNone%s)", Globals.ANSI_RED, Globals.ANSI_RESET);
+        }
+        // Get Current Lesson Number
+        System.out.print("\t(Current Lesson : ");
+        if (HJSS.getCurrentLessonNumber() > 0) {
+            System.out.printf("%s%d%s)", Globals.ANSI_GREEN, HJSS.getCurrentLessonNumber(), Globals.ANSI_RESET);
+        } else {
+            System.out.printf("%sNot Yet Started%s)", Globals.ANSI_RED, Globals.ANSI_RESET);
+        }
+
+        System.out.printf("%n");
         Utils.printSeparator(Globals.ANSI_RED);
         for (int i = 0; i < menuOptions.size(); i++) {
             System.out.printf("%s%3d%s: %s%n", Globals.ANSI_CYAN, (i + 1), Globals.ANSI_RESET, menuOptions.get(i));

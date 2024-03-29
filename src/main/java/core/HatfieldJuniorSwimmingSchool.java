@@ -5,7 +5,7 @@ import utils.MenuOptionsValidator;
 import utils.UserInputValidator;
 import utils.Utils;
 import utils.validators.input.*;
-import utils.validators.menu.ValidateMainMenu;
+import utils.validators.menu.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -127,13 +127,13 @@ public class HatfieldJuniorSwimmingSchool {
                 createLearner();
                 System.out.println(this.selectedLearner);
                 break;
-                /*
             case 2:
                 selectLearner();
                 break;
             case 3:
                 selectLesson();
                 break;
+                /*
             case 4:
                 createBooking();
                 break;
@@ -177,6 +177,73 @@ public class HatfieldJuniorSwimmingSchool {
         int grade = UserInputValidator.validateInput("Enter current grade level: ", ValidateGrade::validate, this);
 
         return new Learner(this, name, gender, age, contact, number, this.getGradeByNumber(grade));
+    }
+
+    private void selectLearner() {
+        Learner learner = selectLearnerMenu();
+        this.setSelectedLearner(learner);
+    }
+
+    private Learner selectLearnerMenu() {
+        return MenuOptionsValidator.userInputMenu(Globals.menuNameSelectLearner, ValidateSelectLearner::menuOptions, ValidateSelectLearner::menuResults, this);
+    }
+
+    private void selectLesson() {
+        Lesson lesson = selectLessonsMenu();
+        this.setSelectedLesson(lesson);
+    }
+
+
+    private Lesson selectLessonsMenu() {
+        int selectLessonsMenu;
+        try {
+            selectLessonsMenu = MenuOptionsValidator.userInputMenu(Globals.menuNameMainMenu, ValidateSelectLessonsBy::menuOptions, ValidateSelectLessonsBy::menuResults, this);
+
+        } catch (NullPointerException e) {
+            selectLessonsMenu = -1;
+        }
+
+
+        ArrayList<Lesson> selectedLessons;
+        Lesson selectedLesson = null;
+
+        switch (selectLessonsMenu) {
+            case 1:
+                selectedLessons = MenuOptionsValidator.userInputMenu(Globals.menuNameSelectLessonByDay, ValidateLessonByDay::menuOptions, ValidateLessonByDay::menuResults, this);
+                if (selectedLessons != null) {
+                    this.setSelectedLessons(selectedLessons);
+                    selectedLesson = selectLessonFromLessons();
+                }
+                break;
+            case 2:
+                selectedLessons = MenuOptionsValidator.userInputMenu(Globals.menuNameSelectLessonByGrade, ValidateLessonByGrade::menuOptions, ValidateLessonByGrade::menuResults, this);
+                if (selectedLessons != null) {
+                    this.setSelectedLessons(selectedLessons);
+                    selectedLesson = selectLessonFromLessons();
+                }
+                break;
+            case 3:
+                selectedLessons = MenuOptionsValidator.userInputMenu(Globals.menuNameSelectLessonByCoach, ValidateLessonByCoach::menuOptions, ValidateLessonByCoach::menuResults, this);
+                if (selectedLessons != null) {
+                    this.setSelectedLessons(selectedLessons);
+                    selectedLesson = selectLessonFromLessons();
+                }
+                break;
+            case 4:
+                selectedLessons = MenuOptionsValidator.userInputMenu(Globals.menuNameSelectLessonByLearner, ValidateLessonByLearner::menuOptions, ValidateLessonByLearner::menuResults, this);
+                if (selectedLessons != null) {
+                    this.setSelectedLessons(selectedLessons);
+                    selectedLesson = selectLessonFromLessons();
+                }
+                break;
+            default:
+                break;
+        }
+        return selectedLesson;
+    }
+
+    private Lesson selectLessonFromLessons() {
+        return MenuOptionsValidator.userInputMenu(Globals.menuNameSelectLesson, ValidateSelectLessonFromLessons::menuOptions, ValidateSelectLessonFromLessons::menuResults, this);
     }
 
     /*
