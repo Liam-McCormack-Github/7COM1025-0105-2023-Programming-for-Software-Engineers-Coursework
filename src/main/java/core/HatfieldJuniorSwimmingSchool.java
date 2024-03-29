@@ -133,10 +133,10 @@ public class HatfieldJuniorSwimmingSchool {
             case 3:
                 selectLesson();
                 break;
-                /*
             case 4:
                 createBooking();
                 break;
+                /*
             case 5:
                 cancelBooking();
                 break;
@@ -244,6 +244,16 @@ public class HatfieldJuniorSwimmingSchool {
 
     private Lesson selectLessonFromLessons() {
         return MenuOptionsValidator.userInputMenu(Globals.menuNameSelectLesson, ValidateSelectLessonFromLessons::menuOptions, ValidateSelectLessonFromLessons::menuResults, this);
+    }
+
+    public void createBooking() {
+        try {
+            new Booking(this, this.selectedLesson, this.selectedLearner);
+            Utils.printOutputMessage(String.format("Booked lesson (%s)", this.selectedLesson.getLessonTitle()));
+        } catch (IllegalArgumentException e) {
+            Utils.printErrorMessage(e.getLocalizedMessage());
+            Utils.printErrorMessage("Could not book Learner to that lesson, please choose a different lesson");
+        }
     }
 
     /*

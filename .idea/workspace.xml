@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="&#10;&#10;Added methods to display details to classes&#10;-Learner&#10;-Lesson&#10;&#10;Created methods for selecting learner and selecting lesson&#10;-HatfieldJuniorSwimmingSchool&#10;-ValidateLessonByCoach&#10;-ValidateLessonByDay&#10;-ValidateLessonByGrade&#10;-ValidateLessonByLearner&#10;-ValidateSelectLearner&#10;-ValidateSelectLessonFromLessons&#10;-ValidateSelectLessonsBy&#10;&#10;Added important information to main menu, display&#10;-MenuOptionsValidator">
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/menu/ValidateLessonByGrade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/menu/ValidateLessonByGrade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/others/ValidateBooking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/Lesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Lesson.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,26 +41,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Features",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/liam/Desktop/Uni Stuff/MSc 23-24/Assignments/7COM1025-0105-2023---Programming-for-Software-Engineers/HatfieldJuniorSwimmingSchool/src/main/java/utils/validators/menu",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Features&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/liam/Desktop/Uni Stuff/MSc 23-24/Assignments/7COM1025-0105-2023---Programming-for-Software-Engineers/HatfieldJuniorSwimmingSchool/src/main/java/utils/validators/menu&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\liam\Desktop\Uni Stuff\MSc 23-24\Assignments\7COM1025-0105-2023---Programming-for-Software-Engineers\HatfieldJuniorSwimmingSchool\src\main\java\utils\validators\menu" />
@@ -70,6 +73,7 @@
       <recent name="utils" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="utils.validators.others" />
       <recent name="utils.validators.menu" />
     </key>
   </component>
@@ -83,6 +87,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
