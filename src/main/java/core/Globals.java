@@ -1,5 +1,12 @@
 package core;
 
+import common.Grade;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.NavigableSet;
+import java.util.TreeSet;
+
 public class Globals {
     /*
      *   _____ ______ _______ _______ ______ _____   _____
@@ -59,4 +66,38 @@ public class Globals {
      *
      * Methods
      */
+    public static NavigableSet<Grade> gradesTree = new TreeSet<>();
+    public static Map<Integer, Grade> gradeMap = new HashMap<>();
+    public static Map<Integer, Grade> gradeLevelMap = new HashMap<>();
+
+    private Globals() {
+        // Private constructor to prevent instantiation
+    }
+
+    public static void generateGlobalGradeTreeSet(NavigableSet<Grade> grades) {
+        gradesTree.addAll(grades);
+    }
+
+    public static void generateGlobalGradePositionMap(NavigableSet<Grade> grades) {
+        int position = 1;
+        for (Grade grade : grades) {
+            gradeMap.put(position++, grade);
+        }
+    }
+
+    public static void generateGlobalGradeLevelMap(NavigableSet<Grade> grades) {
+        for (Grade grade : grades) {
+            gradeLevelMap.put(grade.getLevel(), grade);
+        }
+    }
+
+    public static void resetStaticTrees() {
+        gradesTree.clear();
+        gradeMap.clear();
+        gradeLevelMap.clear();
+    }
+
+    public static Grade getGradeByLevel(int level) {
+        return gradeLevelMap.get(level);
+    }
 }

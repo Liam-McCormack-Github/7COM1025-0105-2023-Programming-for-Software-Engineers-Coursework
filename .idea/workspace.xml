@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="&#10;&#10;Added methods to display details to classes&#10;-Learner&#10;-Lesson&#10;&#10;Created methods for selecting learner and selecting lesson&#10;-HatfieldJuniorSwimmingSchool&#10;-ValidateLessonByCoach&#10;-ValidateLessonByDay&#10;-ValidateLessonByGrade&#10;-ValidateLessonByLearner&#10;-ValidateSelectLearner&#10;-ValidateSelectLessonFromLessons&#10;-ValidateSelectLessonsBy&#10;&#10;Added important information to main menu, display&#10;-MenuOptionsValidator">
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/others/ValidateBooking.java" afterDir="false" />
+    <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="Created the booking system.&#10;Had to change grades into a TreeSet and deal with some static stuff,&#10;&#10;Can now book and cancel lessons.&#10;Added a dependency system so future lessons can be booked if a dependent lesson is available.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/others/ValidateCancellation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/common/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/Lesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Lesson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Globals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/HatfieldJuniorSwimmingSchool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/HatfieldJuniorSwimmingSchool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Seeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Seeder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/MenuOptionsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/MenuOptionsValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/menu/ValidateLessonByGrade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/menu/ValidateLessonByGrade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/menu/ValidateMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/menu/ValidateMainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/others/ValidateBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/others/ValidateBooking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,26 +48,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Features&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/liam/Desktop/Uni Stuff/MSc 23-24/Assignments/7COM1025-0105-2023---Programming-for-Software-Engineers/HatfieldJuniorSwimmingSchool/src/main/java/utils/validators/menu&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.MainTest.testNormalApproach.executor": "Run",
+    "JUnit.MainTest.testUserInput_exampleApproach.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Features",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/liam/Desktop/Uni Stuff/MSc 23-24/Assignments/7COM1025-0105-2023---Programming-for-Software-Engineers/HatfieldJuniorSwimmingSchool/src/main/java/utils/validators/menu",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\liam\Desktop\Uni Stuff\MSc 23-24\Assignments\7COM1025-0105-2023---Programming-for-Software-Engineers\HatfieldJuniorSwimmingSchool\src\main\java\utils\validators\menu" />
@@ -77,7 +88,7 @@
       <recent name="utils.validators.menu" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.MainTest.testUserInput_exampleApproach">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="HatfieldJuniorSwimmingSchool" />
@@ -85,14 +96,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainTest.testNormalApproach" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HatfieldJuniorSwimmingSchool" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="METHOD_NAME" value="testNormalApproach" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.testUserInput_exampleApproach" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HatfieldJuniorSwimmingSchool" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="METHOD_NAME" value="testUserInput_exampleApproach" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MainTest.testUserInput_exampleApproach" />
+        <item itemvalue="JUnit.MainTest.testNormalApproach" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-1.8.0_402-corretto-1.8.0_402-4caba194b151-ae57be32" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -103,6 +142,8 @@
       <option name="presentableId" value="Default" />
       <updated>1711646272441</updated>
       <workItem from="1711646273471" duration="336000" />
+      <workItem from="1711735672552" duration="1030000" />
+      <workItem from="1711736824854" duration="2294000" />
     </task>
     <task id="LOCAL-00001" summary="Project Init">
       <option name="closed" value="true" />
@@ -128,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711715701251</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Trying to sort out booking need to commit this.">
+      <option name="closed" value="true" />
+      <created>1711716535446</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1711716535446</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +187,11 @@
     <MESSAGE value="Project Init" />
     <MESSAGE value="More Project Init" />
     <MESSAGE value="&#10;&#10;Added methods to display details to classes&#10;-Learner&#10;-Lesson&#10;&#10;Created methods for selecting learner and selecting lesson&#10;-HatfieldJuniorSwimmingSchool&#10;-ValidateLessonByCoach&#10;-ValidateLessonByDay&#10;-ValidateLessonByGrade&#10;-ValidateLessonByLearner&#10;-ValidateSelectLearner&#10;-ValidateSelectLessonFromLessons&#10;-ValidateSelectLessonsBy&#10;&#10;Added important information to main menu, display&#10;-MenuOptionsValidator" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;&#10;Added methods to display details to classes&#10;-Learner&#10;-Lesson&#10;&#10;Created methods for selecting learner and selecting lesson&#10;-HatfieldJuniorSwimmingSchool&#10;-ValidateLessonByCoach&#10;-ValidateLessonByDay&#10;-ValidateLessonByGrade&#10;-ValidateLessonByLearner&#10;-ValidateSelectLearner&#10;-ValidateSelectLessonFromLessons&#10;-ValidateSelectLessonsBy&#10;&#10;Added important information to main menu, display&#10;-MenuOptionsValidator" />
+    <MESSAGE value="Trying to sort out booking need to commit this." />
+    <option name="LAST_COMMIT_MESSAGE" value="Trying to sort out booking need to commit this." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -25,7 +25,7 @@ public class ValidateMainMenu {
         }
 
         if (userChoice == 1 ||
-                // userChoice == 888 ||
+                userChoice == 888 || // TODO remove
                 userChoice == 2 ||
                 userChoice == 3
         ) {
@@ -39,6 +39,14 @@ public class ValidateMainMenu {
                 return new Utils.ValidationResult<>(true, userChoice, null);
             } else {
                 errorMessage = "You need to select a user and a lesson before booking";
+            }
+        }
+
+        if (userChoice == 5) {
+            if (!HJSS.getBookings().isEmpty() && HJSS.getSelectedLesson() != null && HJSS.getSelectedLearner() != null) {
+                return new Utils.ValidationResult<>(true, userChoice, null);
+            } else {
+                errorMessage = "You can't cancel lessons if you haven't booked any";
             }
         }
 
