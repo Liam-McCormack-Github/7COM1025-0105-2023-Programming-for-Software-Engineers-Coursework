@@ -24,7 +24,7 @@ public class MenuOptionsValidator extends Utils {
         System.out.print("\t\t\t(Selected Learner : ");
         // Get Selected Learner
         if (user != null) {
-            System.out.printf("%s[%s]%s)", Globals.ANSI_GREEN, user.getInfo(), Globals.ANSI_RESET);
+            System.out.printf("%s%s%s)", Globals.ANSI_GREEN, user.getInfo(), Globals.ANSI_RESET);
         } else {
             System.out.printf("%sNone%s)", Globals.ANSI_RED, Globals.ANSI_RESET);
         }

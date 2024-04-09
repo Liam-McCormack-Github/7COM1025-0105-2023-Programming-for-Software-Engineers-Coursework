@@ -25,9 +25,11 @@ public class ValidateMainMenu {
         }
 
         if (userChoice == 1 ||
-                userChoice == 888 || // TODO remove
+                // userChoice == 888 ||
                 userChoice == 2 ||
-                userChoice == 3
+                userChoice == 3 ||
+                userChoice == 6
+
         ) {
             return new Utils.ValidationResult<>(true, userChoice, null);
         }

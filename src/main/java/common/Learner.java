@@ -1,10 +1,13 @@
 package common;
 
+import core.Globals;
 import core.HatfieldJuniorSwimmingSchool;
 import utils.UserInputValidator;
+import utils.Utils;
 import utils.validators.input.*;
 
 import java.util.ArrayList;
+import java.util.NavigableSet;
 import java.util.UUID;
 
 public class Learner {
@@ -13,7 +16,7 @@ public class Learner {
     private final ArrayList<Lesson> lessons;
     private final ArrayList<Lesson> lessonsHigherGradeAchieved;
     private final ArrayList<Review> lessonsReviewed;
-    private final Grade grade;
+    private Grade grade;
     private String name;
     private String gender;
     private int age;
@@ -52,11 +55,65 @@ public class Learner {
      * Methods
      */
     public String getInfo() {
-        return String.format("Name: %s Grade: %d",
+        return String.format("(%s, lvl: %d)",
                 this.name, this.getGradeLevel()
         );
 
     }
+
+    public void increaseGrade(NavigableSet<Grade> grades) {
+        // Find the next higher grade
+        Grade nextGrade = grades.higher(this.grade);
+
+        // If there is a next grade, change grade to that next grade
+        if (nextGrade != null) {
+            this.grade = nextGrade;
+        }
+    }
+
+    public void printReport() {
+        ArrayList<String> bookedLessons = new ArrayList<>();
+        ArrayList<String> cancelledLessons = new ArrayList<>();
+        ArrayList<String> attendedLessons = new ArrayList<>();
+
+        for (Booking booking : this.bookings) {
+            String lessonTitle = booking.getLesson().getLessonTitle();
+
+            bookedLessons.add(lessonTitle);
+
+            for (Lesson lesson : this.lessonsHigherGradeAchieved) {
+                if (booking.getLesson().getId() == lesson.getId()) {
+                    lessonTitle = String.format("%s%s%s\tLearner progressed to grade level %d", Globals.ANSI_GREEN, lessonTitle, Globals.ANSI_RESET, lesson.getGradeLevel());
+                }
+            }
+
+            if (booking.isCancelled()) {
+                cancelledLessons.add(lessonTitle);
+            } else {
+                attendedLessons.add(lessonTitle);
+            }
+        }
+
+        System.out.printf("Learner: %s,\tFinal grade level: %s,\tAge: %d%n", this.name, this.getGradeLevel(), this.age);
+
+        System.out.printf("\tBooked Lessons: %d%n", this.bookings.size());
+        for (String x : bookedLessons) {
+            System.out.printf("\t\t%s%n", x);
+        }
+
+        System.out.printf("\t%sCancelled%s Lessons: %d%n", Globals.ANSI_RED, Globals.ANSI_RESET, cancelledLessons.size());
+        for (String x : cancelledLessons) {
+            System.out.printf("\t\t%s%n", x);
+        }
+
+        System.out.printf("\t%sAttended%s Lessons: %d%n", Globals.ANSI_GREEN, Globals.ANSI_RESET, attendedLessons.size());
+        for (String x : attendedLessons) {
+            System.out.printf("\t\t%s%n", x);
+        }
+
+        Utils.printSeparator(Globals.ANSI_BLUE);
+    }
+
 
     @Override
     public String toString() {
@@ -103,18 +160,6 @@ public class Learner {
         this.name = result.getValue();
     }
 
-    public String getGender() {
-        return this.gender;
-    }
-
-    private void setGender(String value) {
-        UserInputValidator.ValidationResult<String> result = ValidateGender.validate(String.valueOf(value));
-        if (!result.isValid()) {
-            throw new IllegalArgumentException(result.getErrorMessage());
-        }
-        this.gender = result.getValue();
-    }
-
     public int getAge() {
         return this.age;
     }
@@ -127,16 +172,16 @@ public class Learner {
         this.age = result.getValue();
     }
 
-    public String getContact() {
-        return this.contact;
+    public String getGender() {
+        return this.gender;
     }
 
-    private void setContact(String value) {
-        UserInputValidator.ValidationResult<String> result = ValidateContact.validate(String.valueOf(value));
+    private void setGender(String value) {
+        UserInputValidator.ValidationResult<String> result = ValidateGender.validate(String.valueOf(value));
         if (!result.isValid()) {
             throw new IllegalArgumentException(result.getErrorMessage());
         }
-        this.contact = result.getValue();
+        this.gender = result.getValue();
     }
 
     public String getNumber() {
@@ -149,6 +194,18 @@ public class Learner {
             throw new IllegalArgumentException(result.getErrorMessage());
         }
         this.number = result.getValue();
+    }
+
+    public String getContact() {
+        return this.contact;
+    }
+
+    private void setContact(String value) {
+        UserInputValidator.ValidationResult<String> result = ValidateContact.validate(String.valueOf(value));
+        if (!result.isValid()) {
+            throw new IllegalArgumentException(result.getErrorMessage());
+        }
+        this.contact = result.getValue();
     }
 
     public Grade getGrade() {
