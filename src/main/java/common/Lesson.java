@@ -163,5 +163,4 @@ public class Lesson {
     public ArrayList<Booking> getBookings() {
         return this.bookings;
     }
-
 }

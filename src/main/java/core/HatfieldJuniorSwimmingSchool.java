@@ -128,9 +128,8 @@ public class HatfieldJuniorSwimmingSchool {
 
     public void run() {
         mainMenu();
-        // TODO
         if (this.allLessonsFinished) {
-            System.out.println("Print Reports Here !!!!!!!!!!!!!!!!!!!!!!");
+            this.printReports();
         }
     }
 
@@ -160,12 +159,12 @@ public class HatfieldJuniorSwimmingSchool {
                 break;
                 /*
                 test case
-                */
             case 888:  // TODO remove
                 Learner debugging = new Learner(this, "human1", "other", 11, "human1@mail.com", "1234567898", this.getGradeByNumber(1));
                 this.setSelectedLearner(debugging);
                 this.setSelectedLesson(this.getLessonByNumber(12));
                 break;
+                */
             default:
                 break;
         }
@@ -359,12 +358,43 @@ public class HatfieldJuniorSwimmingSchool {
         }
 
         if (userIsInAttendance) {
-            // TODO
-            // Implement review stuff here
+            Review review = userInputNewReview();
+            Utils.printOutputMessage(String.format("Created new review (%s)", review.getLesson().getLessonTitle()));
             return false;
         }
 
         return this.currentLessonNumber <= this.numberOfLessons;
+    }
+
+    private Review userInputNewReview() {
+
+        int rating = UserInputValidator.validateInput("Enter rating (1-5): ", ValidateRating::validate, this);
+        String comment = UserInputValidator.validateInput("Enter comment: ", ValidateComment::validate, this);
+
+        return new Review(this, rating, comment, this.getLessonByNumber(this.currentLessonNumber), this.selectedLearner);
+    }
+
+    private void printReports() {
+        generateLearnerLessonReport();
+        generateCoachRatingReport();
+    }
+
+    private void generateLearnerLessonReport() {
+        Utils.printSeparator(Globals.ANSI_RED);
+        Utils.printOutputMessage("Learner Activity Report");
+        Utils.printSeparator(Globals.ANSI_RED);
+        for (Learner learner : this.learners) {
+            learner.printReport();
+        }
+    }
+
+    private void generateCoachRatingReport() {
+        Utils.printSeparator(Globals.ANSI_RED);
+        Utils.printOutputMessage("Coach Rating Summary");
+        Utils.printSeparator(Globals.ANSI_RED);
+        for (Coach coach : this.coaches) {
+            coach.printReport();
+        }
     }
 
     /*

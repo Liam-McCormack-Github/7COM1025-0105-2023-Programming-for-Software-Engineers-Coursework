@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.util.NoSuchElementException;
 
 
 public class MainTest {
@@ -80,10 +79,13 @@ public class MainTest {
 
         // Simulate next Lesson #1, Grade 1
         inputString += String.format("6%n"); // Select '6: Simulate lessons (Until: next user lesson || end)'
+        inputString += String.format("4%n"); // Enter rating (1-5):
+        inputString += String.format("Good lesson, learned a lot%n"); // Enter comment (str):
 
         // Simulate next Lesson #6, Grade 2
         inputString += String.format("6%n"); // Select '6: Simulate lessons (Until: next user lesson || end)'
-
+        inputString += String.format("5%n"); // Enter rating (1-5):
+        inputString += String.format("Great lesson, learned a lot%n"); // Enter comment (str):
 
         // Book Lesson #17, Grade 3
         inputString += String.format("3%n"); // Select '3: Select a lesson'
@@ -115,10 +117,32 @@ public class MainTest {
 
         // Simulate next Lesson #17, Grade 3
         inputString += String.format("6%n"); // Select '6: Simulate lessons (Until: next user lesson || end)'
+        inputString += String.format("5%n"); // Enter rating (1-5):
+        inputString += String.format("Great lesson, learned a lot%n"); // Enter comment (str):
 
         // Simulate next Lessons
         inputString += String.format("6%n"); // Select '6: Simulate lessons (Until: next user lesson || end)'
+
         provideInput(inputString);
+
+        /*
+        Learner: Tester,	Final grade level: 3,	Age: 4
+            Booked Lessons: 6
+                Lesson: #1	(w1	l1) 	Grade: 1 	Coach: Helen 	Time: Monday (16:00->17:00)
+                Lesson: #21	(w2	l10) 	Grade: 2 	Coach: Harry 	Time: Saturday (14:00->15:00)
+                Lesson: #6	(w1	l6) 	Grade: 2 	Coach: Helena 	Time: Wednesday (18:00->19:00)
+                Lesson: #17	(w2	l6) 	Grade: 3 	Coach: Helena 	Time: Wednesday (18:00->19:00)
+                Lesson: #28	(w3	l6) 	Grade: 4 	Coach: Helena 	Time: Wednesday (18:00->19:00)
+                Lesson: #39	(w4	l6) 	Grade: 5 	Coach: Helena 	Time: Wednesday (18:00->19:00)
+            Cancelled Lessons: 3
+                Lesson: #21	(w2	l10) 	Grade: 2 	Coach: Harry 	Time: Saturday (14:00->15:00)
+                Lesson: #28	(w3	l6) 	Grade: 4 	Coach: Helena 	Time: Wednesday (18:00->19:00)
+                Lesson: #39	(w4	l6) 	Grade: 5 	Coach: Helena 	Time: Wednesday (18:00->19:00)
+            Attended Lessons: 3
+                Lesson: #1	(w1	l1) 	Grade: 1 	Coach: Helen 	Time: Monday (16:00->17:00)	Learner progressed to grade level 1
+                Lesson: #6	(w1	l6) 	Grade: 2 	Coach: Helena 	Time: Wednesday (18:00->19:00)	Learner progressed to grade level 2
+                Lesson: #17	(w2	l6) 	Grade: 3 	Coach: Helena 	Time: Wednesday (18:00->19:00)	Learner progressed to grade level 3
+        */
 
         HatfieldJuniorSwimmingSchool HJSS = new HatfieldJuniorSwimmingSchool();
         HJSS.preInit();

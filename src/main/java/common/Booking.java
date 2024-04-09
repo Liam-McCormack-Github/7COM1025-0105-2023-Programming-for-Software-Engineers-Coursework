@@ -113,6 +113,10 @@ public class Booking {
         return this.lesson;
     }
 
+    public ArrayList<Booking> getDependantBookings() {
+        return this.dependantBookings;
+    }
+
     public boolean isCancelled() {
         return this.cancelled;
     }
@@ -129,10 +133,6 @@ public class Booking {
      */
     public void setCancelled(boolean cancelled) {
         this.cancelled = cancelled;
-    }
-
-    public ArrayList<Booking> getDependantBookings() {
-        return this.dependantBookings;
     }
 }
 

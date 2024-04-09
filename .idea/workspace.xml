@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="Created the booking system.&#10;Had to change grades into a TreeSet and deal with some static stuff,&#10;&#10;Can now book and cancel lessons.&#10;Added a dependency system so future lessons can be booked if a dependent lesson is available.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateLessonNumber.java" afterDir="false" />
+    <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="Created system for simulating lessons.&#10;    Simulating lessons increases learners grade correctly&#10;    Lessons that have been simulated cannot have their bookings cancelled as they already occurred, similarly lessons in the past cannot be booked to avoid space-time anomalies.&#10;&#10;&#10;&#10;Added a new way to select lesson by number.&#10;-ValidateLessonNumber.java">
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateComment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateRating.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/Coach.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Coach.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/Grade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Grade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/common/Learner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Learner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/Lesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Lesson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Review.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/HatfieldJuniorSwimmingSchool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/HatfieldJuniorSwimmingSchool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/MenuOptionsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/MenuOptionsValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/menu/ValidateMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/menu/ValidateMainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainTest.java" afterDir="false" />
     </list>
@@ -43,31 +50,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "JUnit.MainTest.executor": "Run",
-    "JUnit.MainTest.testNormalApproach.executor": "Run",
-    "JUnit.MainTest.testUserInput_exampleApproach.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Features",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/liam/Desktop/Uni Stuff/MSc 23-24/Assignments/7COM1025-0105-2023---Programming-for-Software-Engineers/HatfieldJuniorSwimmingSchool/src/main/java/utils/validators/menu",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MainTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MainTest.testNormalApproach.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MainTest.testUserInput_exampleApproach.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Features&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/liam/Desktop/Uni Stuff/MSc 23-24/Assignments/7COM1025-0105-2023---Programming-for-Software-Engineers/HatfieldJuniorSwimmingSchool/src/main/java/utils/validators/menu&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\liam\Desktop\Uni Stuff\MSc 23-24\Assignments\7COM1025-0105-2023---Programming-for-Software-Engineers\HatfieldJuniorSwimmingSchool\src\main\java\utils\validators\menu" />
@@ -134,7 +141,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-1.8.0_402-corretto-1.8.0_402-4caba194b151-ae57be32" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
@@ -149,6 +157,7 @@
       <workItem from="1711646273471" duration="336000" />
       <workItem from="1711735672552" duration="1030000" />
       <workItem from="1711736824854" duration="2294000" />
+      <workItem from="1712671275031" duration="1036000" />
     </task>
     <task id="LOCAL-00001" summary="Project Init">
       <option name="closed" value="true" />
@@ -182,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711716535446</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Created system for simulating lessons.&#10;    Simulating lessons increases learners grade correctly&#10;    Lessons that have been simulated cannot have their bookings cancelled as they already occurred, similarly lessons in the past cannot be booked to avoid space-time anomalies.&#10;&#10;&#10;&#10;Added a new way to select lesson by number.&#10;-ValidateLessonNumber.java">
+      <option name="closed" value="true" />
+      <created>1712649439821</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712649439821</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +210,8 @@
     <MESSAGE value="More Project Init" />
     <MESSAGE value="&#10;&#10;Added methods to display details to classes&#10;-Learner&#10;-Lesson&#10;&#10;Created methods for selecting learner and selecting lesson&#10;-HatfieldJuniorSwimmingSchool&#10;-ValidateLessonByCoach&#10;-ValidateLessonByDay&#10;-ValidateLessonByGrade&#10;-ValidateLessonByLearner&#10;-ValidateSelectLearner&#10;-ValidateSelectLessonFromLessons&#10;-ValidateSelectLessonsBy&#10;&#10;Added important information to main menu, display&#10;-MenuOptionsValidator" />
     <MESSAGE value="Trying to sort out booking need to commit this." />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to sort out booking need to commit this." />
+    <MESSAGE value="Created system for simulating lessons.&#10;    Simulating lessons increases learners grade correctly&#10;    Lessons that have been simulated cannot have their bookings cancelled as they already occurred, similarly lessons in the past cannot be booked to avoid space-time anomalies.&#10;&#10;&#10;&#10;Added a new way to select lesson by number.&#10;-ValidateLessonNumber.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created system for simulating lessons.&#10;    Simulating lessons increases learners grade correctly&#10;    Lessons that have been simulated cannot have their bookings cancelled as they already occurred, similarly lessons in the past cannot be booked to avoid space-time anomalies.&#10;&#10;&#10;&#10;Added a new way to select lesson by number.&#10;-ValidateLessonNumber.java" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
