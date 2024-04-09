@@ -173,7 +173,9 @@ public class HatfieldJuniorSwimmingSchool {
             Utils.printOutputMessage("Application is terminating");
             // System.exit(0); -- Unnecessary
         } else if (this.allLessonsFinished) {
-            // Print reports
+            Utils.printSeparator(Globals.ANSI_RED);
+            Utils.printOutputMessage("Printing Reports");
+            Utils.printSeparator(Globals.ANSI_RED);
         } else {
             mainMenu();
         }
@@ -200,6 +202,9 @@ public class HatfieldJuniorSwimmingSchool {
     private void selectLearner() {
         Learner learner = selectLearnerMenu();
         this.setSelectedLearner(learner);
+        if (learner != null) {
+            Utils.printOutputMessage(String.format("Selected learner (%s)", learner.getInfo()));
+        }
     }
 
     private Learner selectLearnerMenu() {
@@ -209,6 +214,9 @@ public class HatfieldJuniorSwimmingSchool {
     private void selectLesson() {
         Lesson lesson = selectLessonsMenu();
         this.setSelectedLesson(lesson);
+        if (lesson != null) {
+            Utils.printOutputMessage(String.format("Selected lesson (%s)", lesson.getLessonTitle()));
+        }
     }
 
 

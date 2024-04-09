@@ -1,11 +1,13 @@
 import core.Globals;
 import core.HatfieldJuniorSwimmingSchool;
+import core.Seeder;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.util.NoSuchElementException;
 
 
 public class MainTest {
@@ -143,6 +145,76 @@ public class MainTest {
                 Lesson: #6	(w1	l6) 	Grade: 2 	Coach: Helena 	Time: Wednesday (18:00->19:00)	Learner progressed to grade level 2
                 Lesson: #17	(w2	l6) 	Grade: 3 	Coach: Helena 	Time: Wednesday (18:00->19:00)	Learner progressed to grade level 3
         */
+
+        HatfieldJuniorSwimmingSchool HJSS = new HatfieldJuniorSwimmingSchool();
+        HJSS.preInit();
+        HJSS.init();
+        HJSS.run();
+    }
+
+
+    @Test(expected = NoSuchElementException.class)
+    public void testUserInputSequence_1_addingNewLearner() {
+        provideInput("1\nTester\nMale\n9\ntester@test.com\n123456789\n0\n");
+
+        HatfieldJuniorSwimmingSchool HJSS = new HatfieldJuniorSwimmingSchool();
+        HJSS.preInit();
+        HJSS.init();
+        HJSS.run();
+    }
+
+    @Test(expected = NoSuchElementException.class)
+    public void testUserInputSequence_2_noBookings() {
+        provideInput("3\n4\n1\n1\n1\n1\n1\n1\n999\n");
+
+        class TestableHJSS extends HatfieldJuniorSwimmingSchool {
+            @Override
+            public void init() {
+                Seeder.seedTimeslots(this);
+                Seeder.seedCoaches(this);
+                Seeder.seedLearners(this);
+                Seeder.seedLessons(this);
+                // Seeder.seedBookings(HJSS);
+                this.getLessonsForEachDay();
+            }
+        }
+        HatfieldJuniorSwimmingSchool HJSS = new TestableHJSS();
+        HJSS.preInit();
+        HJSS.init();
+        HJSS.run();
+    }
+
+    @Test(expected = NoSuchElementException.class)
+    public void testUserInputSequence_3_addingNewLearnerSelectingLearnerNone() {
+        String createNewLearner = String.format("Tester%nMale%n%d%ntester@test.com%n123456789%n%d%n", Globals.minAge, Globals.minGrade);
+        String inputString = String.format("1%n%s2%n999%n", createNewLearner);
+
+        provideInput(inputString);
+
+        HatfieldJuniorSwimmingSchool HJSS = new HatfieldJuniorSwimmingSchool();
+        HJSS.preInit();
+        HJSS.init();
+        HJSS.run();
+    }
+
+    @Test(expected = NoSuchElementException.class)
+    public void testUserInputSequence_4_addingNewLearnerSelectingLessonNone() {
+        String createNewLearner = String.format("Tester%nMale%n%d%ntester@test.com%n123456789%n%d%n", Globals.minAge, Globals.minGrade);
+        String inputString = String.format("1%n%s3%n999%n", createNewLearner);
+
+        provideInput(inputString);
+
+        HatfieldJuniorSwimmingSchool HJSS = new HatfieldJuniorSwimmingSchool();
+        HJSS.preInit();
+        HJSS.init();
+        HJSS.run();
+    }
+
+    @Test
+    public void testUserInputSequence_5_addingNewLearnerSelectingLearnerNoneThenExit() {
+        String createNewLearner = String.format("Tester%nMale%n%d%ntester@test.com%n123456789%n%d%n", Globals.minAge, Globals.minGrade);
+        String inputString = String.format("1%n%s2%n999%n999%n", createNewLearner);
+        provideInput(inputString);
 
         HatfieldJuniorSwimmingSchool HJSS = new HatfieldJuniorSwimmingSchool();
         HJSS.preInit();

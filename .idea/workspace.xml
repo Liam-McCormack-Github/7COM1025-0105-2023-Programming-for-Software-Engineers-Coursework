@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="Created system for simulating lessons.&#10;    Simulating lessons increases learners grade correctly&#10;    Lessons that have been simulated cannot have their bookings cancelled as they already occurred, similarly lessons in the past cannot be booked to avoid space-time anomalies.&#10;&#10;&#10;&#10;Added a new way to select lesson by number.&#10;-ValidateLessonNumber.java">
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateComment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateRating.java" afterDir="false" />
+    <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="Created a system that allows the user to review their lessons after it has occurred.&#10;&#10;Created a system to output the reviews/rating for each learner/coach.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/Coach.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Coach.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/Grade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Grade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/Learner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Learner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/Lesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Lesson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Review.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/HatfieldJuniorSwimmingSchool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/HatfieldJuniorSwimmingSchool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/MenuOptionsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/MenuOptionsValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/menu/ValidateMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/menu/ValidateMainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateComment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -157,7 +148,7 @@
       <workItem from="1711646273471" duration="336000" />
       <workItem from="1711735672552" duration="1030000" />
       <workItem from="1711736824854" duration="2294000" />
-      <workItem from="1712671275031" duration="1036000" />
+      <workItem from="1712671275031" duration="1428000" />
     </task>
     <task id="LOCAL-00001" summary="Project Init">
       <option name="closed" value="true" />
@@ -199,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712649439821</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Created a system that allows the user to review their lessons after it has occurred.&#10;&#10;Created a system to output the reviews/rating for each learner/coach.">
+      <option name="closed" value="true" />
+      <created>1712672452987</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712672452987</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +210,8 @@
     <MESSAGE value="&#10;&#10;Added methods to display details to classes&#10;-Learner&#10;-Lesson&#10;&#10;Created methods for selecting learner and selecting lesson&#10;-HatfieldJuniorSwimmingSchool&#10;-ValidateLessonByCoach&#10;-ValidateLessonByDay&#10;-ValidateLessonByGrade&#10;-ValidateLessonByLearner&#10;-ValidateSelectLearner&#10;-ValidateSelectLessonFromLessons&#10;-ValidateSelectLessonsBy&#10;&#10;Added important information to main menu, display&#10;-MenuOptionsValidator" />
     <MESSAGE value="Trying to sort out booking need to commit this." />
     <MESSAGE value="Created system for simulating lessons.&#10;    Simulating lessons increases learners grade correctly&#10;    Lessons that have been simulated cannot have their bookings cancelled as they already occurred, similarly lessons in the past cannot be booked to avoid space-time anomalies.&#10;&#10;&#10;&#10;Added a new way to select lesson by number.&#10;-ValidateLessonNumber.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created system for simulating lessons.&#10;    Simulating lessons increases learners grade correctly&#10;    Lessons that have been simulated cannot have their bookings cancelled as they already occurred, similarly lessons in the past cannot be booked to avoid space-time anomalies.&#10;&#10;&#10;&#10;Added a new way to select lesson by number.&#10;-ValidateLessonNumber.java" />
+    <MESSAGE value="Created a system that allows the user to review their lessons after it has occurred.&#10;&#10;Created a system to output the reviews/rating for each learner/coach." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created a system that allows the user to review their lessons after it has occurred.&#10;&#10;Created a system to output the reviews/rating for each learner/coach." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
