@@ -5,6 +5,7 @@ import utils.UserInputValidator;
 import utils.validators.input.*;
 
 import java.util.ArrayList;
+import java.util.NavigableSet;
 import java.util.UUID;
 
 public class Learner {
@@ -13,7 +14,7 @@ public class Learner {
     private final ArrayList<Lesson> lessons;
     private final ArrayList<Lesson> lessonsHigherGradeAchieved;
     private final ArrayList<Review> lessonsReviewed;
-    private final Grade grade;
+    private Grade grade;
     private String name;
     private String gender;
     private int age;
@@ -52,10 +53,20 @@ public class Learner {
      * Methods
      */
     public String getInfo() {
-        return String.format("Name: %s Grade: %d",
+        return String.format("Name: %s, Grade: %d",
                 this.name, this.getGradeLevel()
         );
 
+    }
+
+    public void increaseGrade(NavigableSet<Grade> grades) {
+        // Find the next higher grade
+        Grade nextGrade = grades.higher(this.grade);
+
+        // If there is a next grade, change grade to that next grade
+        if (nextGrade != null) {
+            this.grade = nextGrade;
+        }
     }
 
     @Override

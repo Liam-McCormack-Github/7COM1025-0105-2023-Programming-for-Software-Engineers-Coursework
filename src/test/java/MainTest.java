@@ -26,12 +26,16 @@ public class MainTest {
         System.setIn(originalIn);
     }
 
-    @Test(expected = NoSuchElementException.class)
+
+    // @Test(expected = NoSuchElementException.class)
+
+
+    @Test
     public void testUserInputSequence_() {
         provideInput("1\n999\n");
     }
 
-    @Test(expected = NoSuchElementException.class)
+    @Test
     public void testUserInput_exampleApproach() {
         String createNewLearner = String.format("Tester%nMale%n%d%ntester@test.com%n123456789%n%d%n", Globals.minAge, Globals.minGrade);
         String inputString = "";
@@ -74,6 +78,13 @@ public class MainTest {
         inputString += String.format("2%n"); // Select '2: Lesson: #6'
         inputString += String.format("4%n"); // Select '4: Create a new booking for the selected learner at the selected lesson'
 
+        // Simulate next Lesson #1, Grade 1
+        inputString += String.format("6%n"); // Select '6: Simulate lessons (Until: next user lesson || end)'
+
+        // Simulate next Lesson #6, Grade 2
+        inputString += String.format("6%n"); // Select '6: Simulate lessons (Until: next user lesson || end)'
+
+
         // Book Lesson #17, Grade 3
         inputString += String.format("3%n"); // Select '3: Select a lesson'
         inputString += String.format("2%n"); // Select '2: Select lesson by Grade'
@@ -102,6 +113,11 @@ public class MainTest {
         inputString += String.format("2%n"); // Select '2: Lesson: #28'
         inputString += String.format("5%n"); // Select '5: Cancel the booking for the selected learner at the selected lesson'
 
+        // Simulate next Lesson #17, Grade 3
+        inputString += String.format("6%n"); // Select '6: Simulate lessons (Until: next user lesson || end)'
+
+        // Simulate next Lessons
+        inputString += String.format("6%n"); // Select '6: Simulate lessons (Until: next user lesson || end)'
         provideInput(inputString);
 
         HatfieldJuniorSwimmingSchool HJSS = new HatfieldJuniorSwimmingSchool();

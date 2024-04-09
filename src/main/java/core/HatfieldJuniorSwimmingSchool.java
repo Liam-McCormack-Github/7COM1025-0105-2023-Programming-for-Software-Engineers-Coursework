@@ -29,6 +29,7 @@ public class HatfieldJuniorSwimmingSchool {
     private Lesson selectedLesson;
     private ArrayList<Lesson> selectedLessons;
     private Scanner scanner;
+    private boolean allLessonsFinished;
 
 
     public HatfieldJuniorSwimmingSchool() {
@@ -48,6 +49,8 @@ public class HatfieldJuniorSwimmingSchool {
         this.selectedLearner = null;
         this.selectedLessons = new ArrayList<>();
         this.selectedLesson = null;
+
+        this.allLessonsFinished = false;
     }
 
     /*
@@ -79,6 +82,9 @@ public class HatfieldJuniorSwimmingSchool {
         this.selectedLearner = null;
         this.selectedLesson = null;
         this.selectedLessons.clear();
+
+        // Reset boolean flags
+        this.allLessonsFinished = false;
     }
 
     public void preInit() {
@@ -123,6 +129,9 @@ public class HatfieldJuniorSwimmingSchool {
     public void run() {
         mainMenu();
         // TODO
+        if (this.allLessonsFinished) {
+            System.out.println("Print Reports Here !!!!!!!!!!!!!!!!!!!!!!");
+        }
     }
 
 
@@ -146,10 +155,10 @@ public class HatfieldJuniorSwimmingSchool {
             case 5:
                 cancelBooking();
                 break;
-                /*
             case 6:
                 simulateLessons();
                 break;
+                /*
                 test case
                 */
             case 888:  // TODO remove
@@ -163,7 +172,9 @@ public class HatfieldJuniorSwimmingSchool {
 
         if (selectedOptionFromMainMenu == Globals.exitCode) {
             Utils.printOutputMessage("Application is terminating");
-            // System.exit(0);
+            // System.exit(0); -- Unnecessary
+        } else if (this.allLessonsFinished) {
+            // Print reports
         } else {
             mainMenu();
         }
@@ -244,6 +255,9 @@ public class HatfieldJuniorSwimmingSchool {
                     selectedLesson = selectLessonFromLessons();
                 }
                 break;
+            case 5:
+                selectedLesson = UserInputValidator.validateInput("Enter lesson number: ", ValidateLessonNumber::validate, this);
+                break;
             default:
                 break;
         }
@@ -292,6 +306,65 @@ public class HatfieldJuniorSwimmingSchool {
             Utils.printErrorMessage(e.getLocalizedMessage());
             Utils.printErrorMessage("Could not cancel learner from lesson, please choose a different lesson");
         }
+    }
+
+    private void simulateLessons() {
+
+        boolean continueLoop;
+        do {
+            continueLoop = simulateNextLesson();
+        } while (continueLoop);
+
+        if (this.currentLessonNumber >= this.lessons.size()) {
+            this.allLessonsFinished = true;
+        }
+    }
+
+    public boolean simulateNextLesson() {
+        if (this.currentLessonNumber >= this.numberOfLessons) {
+            return false;
+        }
+
+        Lesson currentLesson = this.lessons.get(this.currentLessonNumber);
+        ArrayList<Booking> learnersBookToThisLesson = currentLesson.getBookings();
+        ArrayList<Booking> usersBookings = new ArrayList<>();
+
+        if (this.selectedLearner != null) {
+            usersBookings = this.selectedLearner.getBookings();
+        }
+
+        boolean userIsInAttendance = false;
+
+        for (Booking learnersBooking : learnersBookToThisLesson) {
+            for (Booking userBooking : usersBookings) {
+                if (learnersBooking.getId() == userBooking.getId()) {
+                    if (!userBooking.isCancelled()) {
+                        Utils.printOutputMessage("User is to attending this lesson");
+                        userIsInAttendance = true;
+                    }
+                }
+
+            }
+        }
+
+        this.currentLessonNumber++;
+        currentLesson.setFinished(true);
+
+        Utils.printOutputMessage(String.format("Simulating: {%s}", currentLesson.getLessonDetails()));
+        for (Learner learner : currentLesson.getLearners()) {
+            if (currentLesson.getGradeLevel() == (learner.getGradeLevel() + 1)) {
+                learner.increaseGrade(this.grades);
+                learner.getLessonsHigherGradeAchieved().add(currentLesson);
+            }
+        }
+
+        if (userIsInAttendance) {
+            // TODO
+            // Implement review stuff here
+            return false;
+        }
+
+        return this.currentLessonNumber <= this.numberOfLessons;
     }
 
     /*

@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="Created the booking system.&#10;Had to change grades into a TreeSet and deal with some static stuff,&#10;&#10;Can now book and cancel lessons.&#10;Added a dependency system so future lessons can be booked if a dependent lesson is available.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/others/ValidateCancellation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateLessonNumber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Globals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/Learner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Learner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/HatfieldJuniorSwimmingSchool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/HatfieldJuniorSwimmingSchool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Seeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Seeder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/MenuOptionsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/MenuOptionsValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/menu/ValidateLessonByGrade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/menu/ValidateLessonByGrade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/menu/ValidateMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/menu/ValidateMainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/others/ValidateBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/others/ValidateBooking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +46,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "JUnit.MainTest.executor": "Run",
     "JUnit.MainTest.testNormalApproach.executor": "Run",
     "JUnit.MainTest.testUserInput_exampleApproach.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -88,10 +84,19 @@
       <recent name="utils.validators.menu" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MainTest.testUserInput_exampleApproach">
+  <component name="RunManager" selected="JUnit.MainTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="HatfieldJuniorSwimmingSchool" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HatfieldJuniorSwimmingSchool" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -118,9 +123,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MainTest" />
         <item itemvalue="JUnit.MainTest.testUserInput_exampleApproach" />
         <item itemvalue="JUnit.MainTest.testNormalApproach" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
