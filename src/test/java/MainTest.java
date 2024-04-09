@@ -27,10 +27,6 @@ public class MainTest {
         System.setIn(originalIn);
     }
 
-
-    // @Test(expected = NoSuchElementException.class)
-
-
     @Test
     public void testUserInputSequence_() {
         provideInput("1\n999\n");
