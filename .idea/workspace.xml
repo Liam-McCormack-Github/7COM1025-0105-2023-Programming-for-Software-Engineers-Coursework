@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="Created tests for ValidateBooking.java&#10;Created tests for ValidateCancellation.java&#10;Created tests for ValidateDay.java" />
+    <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="&#10;Created tests for ValidateLessonByCoach.java&#10;Created tests for ValidateLessonByDay.java&#10;Created tests for ValidateLessonByGrade.java&#10;Created tests for ValidateLessonByLearner.java&#10;Created tests for ValidateMainMenu.java&#10;Created tests for ValidateSelectLearner.java&#10;Created tests for ValidateSelectLessonFromLessons.java&#10;Created tests for ValidateSelectLessonsBy.java">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Globals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/common/BookingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/common/BookingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/common/CoachTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/common/CoachTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/common/DayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/common/DayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/common/GradeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/common/GradeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/common/LearnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/common/LearnerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/common/LessonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/common/LessonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/common/ReviewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/common/ReviewTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/common/TimeslotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/common/TimeslotTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/input/ValidateLessonNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/input/ValidateLessonNumberTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateLessonByCoachTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateLessonByCoachTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateLessonByDayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateLessonByDayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateLessonByGradeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateLessonByGradeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateLessonByLearnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateLessonByLearnerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateMainMenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateMainMenuTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateSelectLearnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateSelectLearnerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateSelectLessonFromLessonsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateSelectLessonFromLessonsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateSelectLessonsByTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateSelectLessonsByTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/others/ValidateBookingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/others/ValidateBookingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/others/ValidateCancellationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/others/ValidateCancellationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/others/ValidateDayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/others/ValidateDayTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,32 +59,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in HatfieldJuniorSwimmingSchool.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MainTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MainTest.testNormalApproach.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MainTest.testUserInput_exampleApproach.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Testing&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/liam/Desktop/Uni Stuff/MSc 23-24/Assignments/7COM1025-0105-2023---Programming-for-Software-Engineers/HatfieldJuniorSwimmingSchool/src/main/java/utils/validators/menu&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.All in HatfieldJuniorSwimmingSchool.executor": "Coverage",
+    "JUnit.MainTest.executor": "Run",
+    "JUnit.MainTest.testNormalApproach.executor": "Run",
+    "JUnit.MainTest.testUserInput_exampleApproach.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Testing",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/liam/Desktop/Uni Stuff/MSc 23-24/Assignments/7COM1025-0105-2023---Programming-for-Software-Engineers/HatfieldJuniorSwimmingSchool/src/main/java/utils/validators/menu",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\liam\Desktop\Uni Stuff\MSc 23-24\Assignments\7COM1025-0105-2023---Programming-for-Software-Engineers\HatfieldJuniorSwimmingSchool\src\main\java\utils\validators\menu" />
@@ -126,8 +149,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in HatfieldJuniorSwimmingSchool" />
-        <item itemvalue="JUnit.MainTest" />
         <item itemvalue="JUnit.MainTest.testUserInput_exampleApproach" />
+        <item itemvalue="JUnit.MainTest" />
         <item itemvalue="JUnit.MainTest.testNormalApproach" />
         <item itemvalue="Application.Main" />
       </list>
@@ -157,6 +180,7 @@
       <workItem from="1712819874445" duration="55000" />
       <workItem from="1712849149792" duration="49000" />
       <workItem from="1712862522288" duration="43000" />
+      <workItem from="1712916337336" duration="2696000" />
     </task>
     <task id="LOCAL-00001" summary="Project Init">
       <option name="closed" value="true" />
@@ -262,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712862561959</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="&#10;Created tests for ValidateLessonByCoach.java&#10;Created tests for ValidateLessonByDay.java&#10;Created tests for ValidateLessonByGrade.java&#10;Created tests for ValidateLessonByLearner.java&#10;Created tests for ValidateMainMenu.java&#10;Created tests for ValidateSelectLearner.java&#10;Created tests for ValidateSelectLessonFromLessons.java&#10;Created tests for ValidateSelectLessonsBy.java">
+      <option name="closed" value="true" />
+      <created>1712916428793</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1712916428793</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,10 +314,14 @@
     <MESSAGE value="Created tests for ValidateAge.java&#10;Created tests for ValidateComment.java&#10;Created tests for ValidateContact.java&#10;Created tests for ValidateGender.java" />
     <MESSAGE value="Created tests for ValidateGrade.java&#10;Created tests for ValidateLessonNumber.java&#10;Created tests for ValidateName.java&#10;Created tests for ValidatePhoneNumber.java&#10;Created tests for ValidateRating.java" />
     <MESSAGE value="Created tests for ValidateBooking.java&#10;Created tests for ValidateCancellation.java&#10;Created tests for ValidateDay.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created tests for ValidateBooking.java&#10;Created tests for ValidateCancellation.java&#10;Created tests for ValidateDay.java" />
+    <MESSAGE value="&#10;Created tests for ValidateLessonByCoach.java&#10;Created tests for ValidateLessonByDay.java&#10;Created tests for ValidateLessonByGrade.java&#10;Created tests for ValidateLessonByLearner.java&#10;Created tests for ValidateMainMenu.java&#10;Created tests for ValidateSelectLearner.java&#10;Created tests for ValidateSelectLessonFromLessons.java&#10;Created tests for ValidateSelectLessonsBy.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;Created tests for ValidateLessonByCoach.java&#10;Created tests for ValidateLessonByDay.java&#10;Created tests for ValidateLessonByGrade.java&#10;Created tests for ValidateLessonByLearner.java&#10;Created tests for ValidateMainMenu.java&#10;Created tests for ValidateSelectLearner.java&#10;Created tests for ValidateSelectLessonFromLessons.java&#10;Created tests for ValidateSelectLessonsBy.java" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/HatfieldJuniorSwimmingSchool$All_in_HatfieldJuniorSwimmingSchool.ic" NAME="All in HatfieldJuniorSwimmingSchool Coverage Results" MODIFIED="1712918869198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

@@ -1,6 +1,5 @@
 package common;
 
-import core.Globals;
 import core.HatfieldJuniorSwimmingSchool;
 import core.Seeder;
 import org.junit.After;
@@ -14,7 +13,6 @@ public class ReviewTest {
 
     @Before
     public void setUp() {
-        Globals.resetStaticTrees();
         class TestableHJSS extends HatfieldJuniorSwimmingSchool {
             @Override
             public void init() {
@@ -39,7 +37,6 @@ public class ReviewTest {
         }
         this.HJSS = null;
 
-        Globals.resetStaticTrees();
     }
 
     @Test

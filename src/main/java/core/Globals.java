@@ -96,8 +96,4 @@ public class Globals {
         gradeMap.clear();
         gradeLevelMap.clear();
     }
-
-    public static Grade getGradeByLevel(int level) {
-        return gradeLevelMap.get(level);
-    }
 }

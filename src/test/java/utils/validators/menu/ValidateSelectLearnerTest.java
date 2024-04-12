@@ -18,7 +18,6 @@ public class ValidateSelectLearnerTest {
 
     @Before
     public void setUp() {
-        Globals.resetStaticTrees();
         class TestableHJSS extends HatfieldJuniorSwimmingSchool {
             @Override
             public void init() {
@@ -42,7 +41,6 @@ public class ValidateSelectLearnerTest {
         }
         this.HJSS = null;
 
-        Globals.resetStaticTrees();
     }
 
     @Test

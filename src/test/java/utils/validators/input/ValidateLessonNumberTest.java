@@ -1,7 +1,6 @@
 package utils.validators.input;
 
 import common.Lesson;
-import core.Globals;
 import core.HatfieldJuniorSwimmingSchool;
 import org.junit.After;
 import org.junit.Before;
@@ -15,7 +14,6 @@ public class ValidateLessonNumberTest {
 
     @Before
     public void setUp() {
-        Globals.resetStaticTrees();
         class TestableHJSS extends HatfieldJuniorSwimmingSchool {
         }
         this.HJSS = new TestableHJSS();
@@ -31,7 +29,6 @@ public class ValidateLessonNumberTest {
         }
         this.HJSS = null;
 
-        Globals.resetStaticTrees();
     }
 
 

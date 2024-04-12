@@ -3,7 +3,6 @@ package utils.validators.others;
 import common.Booking;
 import common.Learner;
 import common.Lesson;
-import core.Globals;
 import core.HatfieldJuniorSwimmingSchool;
 import org.junit.After;
 import org.junit.Before;
@@ -17,7 +16,6 @@ public class ValidateBookingTest {
 
     @Before
     public void setUp() {
-        Globals.resetStaticTrees();
         class TestableHJSS extends HatfieldJuniorSwimmingSchool {
         }
         this.HJSS = new TestableHJSS();
@@ -33,7 +31,6 @@ public class ValidateBookingTest {
         }
         this.HJSS = null;
 
-        Globals.resetStaticTrees();
     }
 
     @Test

@@ -17,7 +17,6 @@ public class ValidateMainMenuTest {
 
     @Before
     public void setUp() {
-        Globals.resetStaticTrees();
         class TestableHJSS extends HatfieldJuniorSwimmingSchool {
         }
         this.HJSS = new TestableHJSS();
@@ -33,7 +32,6 @@ public class ValidateMainMenuTest {
         }
         this.HJSS = null;
 
-        Globals.resetStaticTrees();
     }
 
     @Test

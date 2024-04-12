@@ -14,7 +14,6 @@ public class GradeTest {
 
     @Before
     public void setUp() {
-        Globals.resetStaticTrees();
         class TestableHJSS extends HatfieldJuniorSwimmingSchool {
         }
         this.HJSS = new TestableHJSS();
@@ -30,7 +29,6 @@ public class GradeTest {
         }
         this.HJSS = null;
 
-        Globals.resetStaticTrees();
     }
 
 
@@ -70,15 +68,15 @@ public class GradeTest {
 
     @Test
     public void settingAndGettingComment() {
-        Grade grade = new Grade(HJSS, 2);
+        Grade grade = new Grade(HJSS, Globals.minGrade + 1);
         grade.setComment("Intermediate level");
         Assert.assertEquals("Comment should match the set value", "Intermediate level", grade.getComment());
     }
 
     @Test
     public void compareToDifferentGrades() {
-        Grade lowerGrade = new Grade(HJSS, 1);
-        Grade higherGrade = new Grade(HJSS, 2);
+        Grade lowerGrade = new Grade(HJSS, Globals.minGrade + 1);
+        Grade higherGrade = new Grade(HJSS, Globals.minGrade + 2);
 
         Assert.assertTrue("Higher grade should be 'greater than' lower grade", higherGrade.compareTo(lowerGrade) > 0);
         Assert.assertTrue("Lower grade should be 'less than' higher grade", lowerGrade.compareTo(higherGrade) < 0);
