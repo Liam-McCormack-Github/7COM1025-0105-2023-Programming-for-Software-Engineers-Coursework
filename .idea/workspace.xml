@@ -4,29 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="&#10;Created tests for ValidateLessonByCoach.java&#10;Created tests for ValidateLessonByDay.java&#10;Created tests for ValidateLessonByGrade.java&#10;Created tests for ValidateLessonByLearner.java&#10;Created tests for ValidateMainMenu.java&#10;Created tests for ValidateSelectLearner.java&#10;Created tests for ValidateSelectLessonFromLessons.java&#10;Created tests for ValidateSelectLessonsBy.java">
+    <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="Fixed an edge case when changing min/max grade values away from 0&#10;Some refactoring.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Globals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/common/BookingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/common/BookingTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/common/CoachTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/common/CoachTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/common/DayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/common/DayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/common/GradeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/common/GradeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/common/LearnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/common/LearnerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/common/LessonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/common/LessonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/common/ReviewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/common/ReviewTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/common/TimeslotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/common/TimeslotTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/input/ValidateLessonNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/input/ValidateLessonNumberTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateLessonByCoachTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateLessonByCoachTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateLessonByDayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateLessonByDayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateLessonByGradeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateLessonByGradeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateLessonByLearnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateLessonByLearnerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateMainMenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateMainMenuTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateSelectLearnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateSelectLearnerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateSelectLessonFromLessonsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateSelectLessonFromLessonsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateSelectLessonsByTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/menu/ValidateSelectLessonsByTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/others/ValidateBookingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/others/ValidateBookingTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/others/ValidateCancellationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/others/ValidateCancellationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/others/ValidateDayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/others/ValidateDayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/HatfieldJuniorSwimmingSchool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/HatfieldJuniorSwimmingSchool.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +50,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Testing",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/liam/Desktop/Uni Stuff/MSc 23-24/Assignments/7COM1025-0105-2023---Programming-for-Software-Engineers/HatfieldJuniorSwimmingSchool/src/main/java/utils/validators/menu",
@@ -299,6 +280,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project Init" />
