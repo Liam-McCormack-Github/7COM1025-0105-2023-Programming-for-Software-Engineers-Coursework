@@ -3,8 +3,6 @@ package utils.validators.input;
 import utils.Utils;
 
 public class ValidateContact {
-
-
     public static Utils.ValidationResult<String> validate(String input) {
         if (input != null && input.length() > 2 && input.length() < 32) {
             return new Utils.ValidationResult<>(true, input, null);

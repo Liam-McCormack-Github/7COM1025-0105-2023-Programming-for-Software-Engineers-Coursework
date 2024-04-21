@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="HatfieldJuniorSwimmingSchool:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="Fixed an edge case when changing min/max grade values away from 0&#10;Some refactoring.">
+    <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="Added outer-bounds checks to some input validators">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Globals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/HatfieldJuniorSwimmingSchool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/HatfieldJuniorSwimmingSchool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateContact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateContact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateGender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateGender.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,32 +45,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "JUnit.All in HatfieldJuniorSwimmingSchool.executor": "Coverage",
-    "JUnit.MainTest.executor": "Run",
-    "JUnit.MainTest.testNormalApproach.executor": "Run",
-    "JUnit.MainTest.testUserInput_exampleApproach.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/liam/Desktop/Uni Stuff/MSc 23-24/Assignments/7COM1025-0105-2023---Programming-for-Software-Engineers/HatfieldJuniorSwimmingSchool/src/main/java/utils/validators/menu",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in HatfieldJuniorSwimmingSchool.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.MainTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MainTest.testNormalApproach.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MainTest.testUserInput_exampleApproach.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/liam/Desktop/Uni Stuff/MSc 23-24/Assignments/7COM1025-0105-2023---Programming-for-Software-Engineers/HatfieldJuniorSwimmingSchool&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\liam\Desktop\Uni Stuff\MSc 23-24\Assignments\7COM1025-0105-2023---Programming-for-Software-Engineers\HatfieldJuniorSwimmingSchool\src\main\java\utils\validators\menu" />
@@ -162,6 +167,13 @@
       <workItem from="1712849149792" duration="49000" />
       <workItem from="1712862522288" duration="43000" />
       <workItem from="1712916337336" duration="2696000" />
+      <workItem from="1713258541444" duration="77000" />
+      <workItem from="1713258689258" duration="661000" />
+      <workItem from="1713268248442" duration="1278000" />
+      <workItem from="1713269563191" duration="132000" />
+      <workItem from="1713270425412" duration="1199000" />
+      <workItem from="1713271665172" duration="1093000" />
+      <workItem from="1713690906234" duration="663000" />
     </task>
     <task id="LOCAL-00001" summary="Project Init">
       <option name="closed" value="true" />
@@ -275,7 +287,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712916428793</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Fixed an edge case when changing min/max grade values away from 0&#10;Some refactoring.">
+      <option name="closed" value="true" />
+      <created>1713258561409</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1713258561409</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added outer-bounds checks to some input validators">
+      <option name="closed" value="true" />
+      <created>1713271528024</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1713271528025</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,7 +335,9 @@
     <MESSAGE value="Created tests for ValidateGrade.java&#10;Created tests for ValidateLessonNumber.java&#10;Created tests for ValidateName.java&#10;Created tests for ValidatePhoneNumber.java&#10;Created tests for ValidateRating.java" />
     <MESSAGE value="Created tests for ValidateBooking.java&#10;Created tests for ValidateCancellation.java&#10;Created tests for ValidateDay.java" />
     <MESSAGE value="&#10;Created tests for ValidateLessonByCoach.java&#10;Created tests for ValidateLessonByDay.java&#10;Created tests for ValidateLessonByGrade.java&#10;Created tests for ValidateLessonByLearner.java&#10;Created tests for ValidateMainMenu.java&#10;Created tests for ValidateSelectLearner.java&#10;Created tests for ValidateSelectLessonFromLessons.java&#10;Created tests for ValidateSelectLessonsBy.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;Created tests for ValidateLessonByCoach.java&#10;Created tests for ValidateLessonByDay.java&#10;Created tests for ValidateLessonByGrade.java&#10;Created tests for ValidateLessonByLearner.java&#10;Created tests for ValidateMainMenu.java&#10;Created tests for ValidateSelectLearner.java&#10;Created tests for ValidateSelectLessonFromLessons.java&#10;Created tests for ValidateSelectLessonsBy.java" />
+    <MESSAGE value="Fixed an edge case when changing min/max grade values away from 0&#10;Some refactoring." />
+    <MESSAGE value="Added outer-bounds checks to some input validators" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added outer-bounds checks to some input validators" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
