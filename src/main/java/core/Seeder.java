@@ -3,6 +3,23 @@ package core;
 import common.*;
 
 public class Seeder {
+    // Populate ArrayList Days
+    public static void seedDays(HatfieldJuniorSwimmingSchool HJSS) {
+        for (int i = 1; i <= Globals.daysOfTheWeek.length; i++) {
+            new Day(HJSS, i);
+        }
+    }
+
+    // Populate ArrayList Grades
+    public static void seedGrades(HatfieldJuniorSwimmingSchool HJSS) {
+        for (int i = Globals.minGrade; i <= Globals.maxGrade; i++) {
+            new Grade(HJSS, i);
+        }
+        Globals.generateGlobalGradePositionMap(HJSS.getGrades());
+        Globals.generateGlobalGradeTreeSet(HJSS.getGrades());
+        Globals.generateGlobalGradeLevelMap(HJSS.getGrades());
+    }
+
     // Populate ArrayList Timeslots
     public static void seedTimeslots(HatfieldJuniorSwimmingSchool HJSS) {
         new Timeslot(HJSS, HJSS.getDayByNumber(1), "16:00", "17:00");

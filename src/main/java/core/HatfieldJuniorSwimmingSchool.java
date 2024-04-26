@@ -89,25 +89,10 @@ public class HatfieldJuniorSwimmingSchool {
 
     public void preInit() {
         Globals.resetStaticTrees();
-        this.seedDays();
-        this.seedGrades();
+        Seeder.seedDays(this);
+        Seeder.seedGrades(this);
 
         this.scanner = new Scanner(System.in);
-    }
-
-    private void seedDays() {
-        for (int i = 1; i <= Globals.daysOfTheWeek.length; i++) {
-            new Day(this, i);
-        }
-    }
-
-    private void seedGrades() {
-        for (int i = Globals.minGrade; i <= Globals.maxGrade; i++) {
-            new Grade(this, i);
-        }
-        Globals.generateGlobalGradePositionMap(this.grades);
-        Globals.generateGlobalGradeTreeSet(this.grades);
-        Globals.generateGlobalGradeLevelMap(this.grades);
     }
 
     public void init() {
@@ -459,18 +444,43 @@ public class HatfieldJuniorSwimmingSchool {
         return this.numberOfLessons;
     }
 
+    /*
+     *   _____ ______ _______ _______ ______ _____   _____
+     *  / ____|  ____|__   __|__   __|  ____|  __ \ / ____|
+     * | (___ | |__     | |     | |  | |__  | |__) | (___
+     *  \___ \|  __|    | |     | |  |  __| |  _  / \___ \
+     *  ____) | |____   | |     | |  | |____| | \ \ ____) |
+     * |_____/|______|  |_|     |_|  |______|_|  \_\_____/
+     *
+     * Setters
+     */
+    public void setNumberOfLessons(int numberOfLessons) {
+        this.numberOfLessons = numberOfLessons;
+    }
+
     public Learner getSelectedLearner() {
         return this.selectedLearner;
+    }
+
+    public void setSelectedLearner(Learner selectedLearner) {
+        this.selectedLearner = selectedLearner;
     }
 
     public Lesson getSelectedLesson() {
         return this.selectedLesson;
     }
 
+    public void setSelectedLesson(Lesson selectedLesson) {
+        this.selectedLesson = selectedLesson;
+    }
+
     public ArrayList<Lesson> getSelectedLessons() {
         return this.selectedLessons;
     }
 
+    public void setSelectedLessons(ArrayList<Lesson> selectedLessons) {
+        this.selectedLessons = selectedLessons;
+    }
 
     // Helpers
     public Learner getLearnerByNumber(int learnerNumber) {
@@ -491,32 +501,5 @@ public class HatfieldJuniorSwimmingSchool {
 
     public Day getDayByNumber(int dayNumber) {
         return this.days.get(dayNumber - 1);
-    }
-
-    /*
-     *   _____ ______ _______ _______ ______ _____   _____
-     *  / ____|  ____|__   __|__   __|  ____|  __ \ / ____|
-     * | (___ | |__     | |     | |  | |__  | |__) | (___
-     *  \___ \|  __|    | |     | |  |  __| |  _  / \___ \
-     *  ____) | |____   | |     | |  | |____| | \ \ ____) |
-     * |_____/|______|  |_|     |_|  |______|_|  \_\_____/
-     *
-     * Setters
-     */
-    public void setNumberOfLessons(int numberOfLessons) {
-        this.numberOfLessons = numberOfLessons;
-    }
-
-    public void setSelectedLearner(Learner selectedLearner) {
-        this.selectedLearner = selectedLearner;
-    }
-
-
-    public void setSelectedLesson(Lesson selectedLesson) {
-        this.selectedLesson = selectedLesson;
-    }
-
-    public void setSelectedLessons(ArrayList<Lesson> selectedLessons) {
-        this.selectedLessons = selectedLessons;
     }
 }
