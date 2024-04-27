@@ -21,7 +21,7 @@ public class ValidateCommentTest {
         Utils.ValidationResult<String> result = ValidateComment.validate("a");
         assertFalse(result.isValid);
         assertNull(result.getValue());
-        assertEquals("Invalid Input: 'a' should be longer than 1 character", result.getErrorMessage());
+        assertEquals("Invalid Input: 'a' should be between 3 and 256 characters long", result.getErrorMessage());
     }
 
     @Test
@@ -29,7 +29,7 @@ public class ValidateCommentTest {
         Utils.ValidationResult<String> result = ValidateComment.validate("");
         assertFalse(result.isValid);
         assertNull(result.getValue());
-        assertEquals("Invalid Input: '' should be longer than 1 character", result.getErrorMessage());
+        assertEquals("Invalid Input: '' should be between 3 and 256 characters long", result.getErrorMessage());
     }
 
     @Test
@@ -37,6 +37,6 @@ public class ValidateCommentTest {
         Utils.ValidationResult<String> result = ValidateComment.validate(null);
         assertFalse(result.isValid);
         assertNull(result.getValue());
-        assertEquals("Invalid Input: 'null' should be longer than 1 character", result.getErrorMessage());
+        assertEquals("Invalid Input: 'null' should be between 3 and 256 characters long", result.getErrorMessage());
     }
 }

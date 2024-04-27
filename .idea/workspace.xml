@@ -9,14 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="Some basic refactoring">
+    <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="For consistency moved the constraints of&#10;ValidateComment.java&#10;ValidateContact.java&#10;ValidateGender.java&#10;ValidateName.java&#10;ValidatePhoneNumber.java&#10;to Globals.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Globals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateComment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateContact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateContact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateGender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateGender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidatePhoneNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidatePhoneNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/input/ValidateCommentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/input/ValidateCommentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/input/ValidateContactTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/input/ValidateContactTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/input/ValidateGenderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/input/ValidateGenderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/validators/input/ValidatePhoneNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/validators/input/ValidatePhoneNumberTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +37,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -52,11 +54,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
-    "JUnit.All in HatfieldJuniorSwimmingSchool.executor": "Coverage",
+    "JUnit.All in HatfieldJuniorSwimmingSchool.executor": "Run",
     "JUnit.MainTest.executor": "Run",
     "JUnit.MainTest.testNormalApproach.executor": "Run",
     "JUnit.MainTest.testUserInputSequence_5_addingNewLearnerSelectingLearnerNoneThenExit.executor": "Run",
     "JUnit.MainTest.testUserInput_exampleApproach.executor": "Run",
+    "JUnit.ValidateCommentTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -111,16 +114,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest.testNormalApproach" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HatfieldJuniorSwimmingSchool" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainTest" />
-      <option name="METHOD_NAME" value="testNormalApproach" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MainTest.testUserInputSequence_5_addingNewLearnerSelectingLearnerNoneThenExit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HatfieldJuniorSwimmingSchool" />
       <option name="PACKAGE_NAME" value="" />
@@ -141,13 +134,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ValidateCommentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HatfieldJuniorSwimmingSchool" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.validators.input.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="utils.validators.input" />
+      <option name="MAIN_CLASS_NAME" value="utils.validators.input.ValidateCommentTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in HatfieldJuniorSwimmingSchool" />
+        <item itemvalue="JUnit.ValidateCommentTest" />
         <item itemvalue="JUnit.MainTest.testUserInputSequence_5_addingNewLearnerSelectingLearnerNoneThenExit" />
         <item itemvalue="JUnit.MainTest.testUserInput_exampleApproach" />
         <item itemvalue="JUnit.MainTest" />
-        <item itemvalue="JUnit.MainTest.testNormalApproach" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +207,7 @@
       <workItem from="1714055340665" duration="458000" />
       <workItem from="1714131548333" duration="5806000" />
       <workItem from="1714155741239" duration="13000" />
-      <workItem from="1714202436116" duration="3039000" />
+      <workItem from="1714202436116" duration="3449000" />
     </task>
     <task id="LOCAL-00001" summary="Project Init">
       <option name="closed" value="true" />
@@ -369,7 +377,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714134668279</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="For consistency moved the constraints of&#10;ValidateComment.java&#10;ValidateContact.java&#10;ValidateGender.java&#10;ValidateName.java&#10;ValidatePhoneNumber.java&#10;to Globals.java">
+      <option name="closed" value="true" />
+      <created>1714207528120</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1714207528120</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,13 +423,14 @@
     <MESSAGE value="UML Diagrams" />
     <MESSAGE value="More UML Diagrams" />
     <MESSAGE value="Some basic refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some basic refactoring" />
+    <MESSAGE value="For consistency moved the constraints of&#10;ValidateComment.java&#10;ValidateContact.java&#10;ValidateGender.java&#10;ValidateName.java&#10;ValidatePhoneNumber.java&#10;to Globals.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="For consistency moved the constraints of&#10;ValidateComment.java&#10;ValidateContact.java&#10;ValidateGender.java&#10;ValidateName.java&#10;ValidatePhoneNumber.java&#10;to Globals.java" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HatfieldJuniorSwimmingSchool$All_in_HatfieldJuniorSwimmingSchool.ic" NAME="All in HatfieldJuniorSwimmingSchool Coverage Results" MODIFIED="1714206916015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/HatfieldJuniorSwimmingSchool$All_in_HatfieldJuniorSwimmingSchool.ic" NAME="All in HatfieldJuniorSwimmingSchool Coverage Results" MODIFIED="1714207640389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

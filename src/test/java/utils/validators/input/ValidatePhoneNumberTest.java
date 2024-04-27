@@ -34,7 +34,7 @@ public class ValidatePhoneNumberTest {
 
     @Test
     public void testValidateWithShortInput() {
-        String input = "1234567";
+        String input = "12";
         Utils.ValidationResult<String> result = ValidatePhoneNumber.validate(input);
         assertFalse("Expected invalid result for short input", result.isValid);
         assertNull("Expected no value for invalid input", result.getValue());

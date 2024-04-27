@@ -22,7 +22,7 @@ public class ValidateContactTest {
         assertFalse("A single-character string should be invalid", result.isValid);
         assertNull("There should be no value for invalid input", result.getValue());
         assertEquals("Error message should match expected output",
-                "Invalid Input: 'a' should be longer than 1 character", result.getErrorMessage());
+                "Invalid Input: 'a' should be between 3 and 256 characters long", result.getErrorMessage());
     }
 
     @Test
@@ -30,8 +30,7 @@ public class ValidateContactTest {
         Utils.ValidationResult<String> result = ValidateContact.validate("");
         assertFalse("An empty string should be invalid", result.isValid);
         assertNull("There should be no value for invalid input", result.getValue());
-        assertEquals("Error message should match expected output",
-                "Invalid Input: '' should be longer than 1 character", result.getErrorMessage());
+        assertEquals("Error message should match expected output","Invalid Input: '' should be between 3 and 256 characters long", result.getErrorMessage());
     }
 
     @Test
@@ -39,7 +38,6 @@ public class ValidateContactTest {
         Utils.ValidationResult<String> result = ValidateContact.validate(null);
         assertFalse("Null should be considered invalid", result.isValid);
         assertNull("There should be no value for invalid input", result.getValue());
-        assertEquals("Error message should match expected output",
-                "Invalid Input: 'null' should be longer than 1 character", result.getErrorMessage());
+        assertEquals("Error message should match expected output","Invalid Input: 'null' should be between 3 and 256 characters long", result.getErrorMessage());
     }
 }

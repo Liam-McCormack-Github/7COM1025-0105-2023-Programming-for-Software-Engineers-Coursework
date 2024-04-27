@@ -43,7 +43,7 @@ public class ValidateGenderTest {
     public void testErrorMessageFormat() {
         String testInput = "a";
         Utils.ValidationResult<String> result = ValidateGender.validate(testInput);
-        String expectedMessage = String.format("Invalid Input: '%s' should be longer than 1 character", testInput);
+        String expectedMessage = String.format("Invalid Input: '%s' should be between 2 and 32 characters long", testInput);
         assertEquals("Error message format mismatch", expectedMessage, result.getErrorMessage());
     }
 }

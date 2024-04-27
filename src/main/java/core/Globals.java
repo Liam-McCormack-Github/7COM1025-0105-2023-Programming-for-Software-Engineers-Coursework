@@ -40,9 +40,6 @@ public class Globals {
     public static final int maxPhoneNumberSize = 16;
 
 
-
-
-
     // String names
     public static final String createLearner = "Create a new learner";
     public static final String selectLearner = "Select a learner";
