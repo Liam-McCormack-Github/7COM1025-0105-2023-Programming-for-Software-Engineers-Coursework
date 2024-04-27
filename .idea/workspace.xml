@@ -9,11 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="More UML Diagrams">
+    <list default="true" id="1f5cfbcf-d54e-4282-bfec-1a199f1cfb42" name="Changes" comment="Some basic refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/HatfieldJuniorSwimmingSchool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/HatfieldJuniorSwimmingSchool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Seeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Seeder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Globals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateComment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateContact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateContact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateGender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateGender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidateName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidatePhoneNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/validators/input/ValidatePhoneNumber.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,9 +52,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
-    "JUnit.All in HatfieldJuniorSwimmingSchool.executor": "Run",
+    "JUnit.All in HatfieldJuniorSwimmingSchool.executor": "Coverage",
     "JUnit.MainTest.executor": "Run",
     "JUnit.MainTest.testNormalApproach.executor": "Run",
+    "JUnit.MainTest.testUserInputSequence_5_addingNewLearnerSelectingLearnerNoneThenExit.executor": "Run",
     "JUnit.MainTest.testUserInput_exampleApproach.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -59,7 +63,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Coding/Minecraft Modding/1.12.2/EnderStorage-1.12.x",
+    "last_opened_file_path": "C:/Coding/Minecraft Modding/1.12.2/EnderStorage-1.12.x/build.gradle",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,13 +94,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.All in HatfieldJuniorSwimmingSchool">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="HatfieldJuniorSwimmingSchool" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in HatfieldJuniorSwimmingSchool" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HatfieldJuniorSwimmingSchool" />
       <option name="PACKAGE_NAME" value="" />
@@ -124,6 +121,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainTest.testUserInputSequence_5_addingNewLearnerSelectingLearnerNoneThenExit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HatfieldJuniorSwimmingSchool" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="METHOD_NAME" value="testUserInputSequence_5_addingNewLearnerSelectingLearnerNoneThenExit" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainTest.testUserInput_exampleApproach" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HatfieldJuniorSwimmingSchool" />
       <option name="PACKAGE_NAME" value="" />
@@ -137,10 +144,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in HatfieldJuniorSwimmingSchool" />
+        <item itemvalue="JUnit.MainTest.testUserInputSequence_5_addingNewLearnerSelectingLearnerNoneThenExit" />
         <item itemvalue="JUnit.MainTest.testUserInput_exampleApproach" />
         <item itemvalue="JUnit.MainTest" />
         <item itemvalue="JUnit.MainTest.testNormalApproach" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -190,7 +197,9 @@
       <workItem from="1713960230326" duration="730000" />
       <workItem from="1714054002014" duration="867000" />
       <workItem from="1714055340665" duration="458000" />
-      <workItem from="1714131548333" duration="2854000" />
+      <workItem from="1714131548333" duration="5806000" />
+      <workItem from="1714155741239" duration="13000" />
+      <workItem from="1714202436116" duration="3039000" />
     </task>
     <task id="LOCAL-00001" summary="Project Init">
       <option name="closed" value="true" />
@@ -352,7 +361,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713906733399</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Some basic refactoring">
+      <option name="closed" value="true" />
+      <created>1714134668279</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1714134668279</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,13 +406,14 @@
     <MESSAGE value="For some reason ValidateGender was extending ValidatePhoneNumber. ¯\_(ツ)_/¯" />
     <MESSAGE value="UML Diagrams" />
     <MESSAGE value="More UML Diagrams" />
-    <option name="LAST_COMMIT_MESSAGE" value="More UML Diagrams" />
+    <MESSAGE value="Some basic refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some basic refactoring" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HatfieldJuniorSwimmingSchool$All_in_HatfieldJuniorSwimmingSchool.ic" NAME="All in HatfieldJuniorSwimmingSchool Coverage Results" MODIFIED="1712918869198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/HatfieldJuniorSwimmingSchool$All_in_HatfieldJuniorSwimmingSchool.ic" NAME="All in HatfieldJuniorSwimmingSchool Coverage Results" MODIFIED="1714206916015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

@@ -27,6 +27,21 @@ public class Globals {
     public static final int maxLessonSize = 5;
     public static final int minRating = 1;
     public static final int maxRating = 5;
+    // additional constraints
+    public static final int minCommentSize = 3;
+    public static final int maxCommentSize = 256;
+    public static final int minContactSize = 3;
+    public static final int maxContactSize = 256;
+    public static final int minGenderSize = 2;
+    public static final int maxGenderSize = 32;
+    public static final int minNameSize = 2;
+    public static final int maxNameSize = 64;
+    public static final int minPhoneNumberSize = 3;
+    public static final int maxPhoneNumberSize = 16;
+
+
+
+
 
     // String names
     public static final String createLearner = "Create a new learner";
